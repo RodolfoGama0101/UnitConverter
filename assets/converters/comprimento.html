@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprimento</title>
+    <style>
+        body{
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .converter-body{
+            width: 400px;
+            height: 200px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0px 0px 2px 1px #cacaca;
+        }
+
+        .converter-title{
+            text-align: center;
+            margin: 13px 0px;
+        }
+
+        input{
+            height: 25px;
+            text-align: center;
+        }
+
+        #input{
+            margin-left: 25px;
+        }
+
+        #inputType,#resultType{
+            width: 166.66px;
+            margin-left: 25px;
+            color: red;
+        }
+
+        #resultType{
+            margin-left: 12.5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="converter-body">
+        <h1 class="converter-title">Length Converter</h1>
+        <input type="text" placeholder="Input" id="input">
+        <span>=</span>
+        <input type="text" placeholder="Resultado" id="result">
+
+        <select id="inputType">
+            <option value="centimeter">Centimeter</option>
+            <option value="meter">Meter</option>
+            <option value="kilometer">Kilometer</option>
+        </select>
+
+        <select id="resultType">
+            <option value="centimeter">Centimeter</option>
+            <option value="meter">Meter</option>
+            <option value="kilometer">Kilometer</option>
+        </select>
+    </div>
+
+    <script>
+        var input = document.getElementById("input");
+        var result = document.getElementById("result");
+        var inputType = document.getElementById("inputType");
+        var resultType = document.getElementById("resultType");
+        var option_from, option_to;
+
+        // now add listener
+        input.addEventListener("keyup", myResult);
+        inputType.addEventListener("change", myResult);
+        resultType.addEventListener("change", myResult);
+
+        // takig initial value
+        inputTypeValue = inputType.value;
+        resultTypeValue = resultType.value;
+
+        function myResult(){
+            // when we change the input and output type vale we need to updata the
+            // option_from and option_to
+
+            option_from = inputType.value;
+            option_to = resultType.value;
+
+            // Now compare the input resultType value and add formula
+
+            if(option_from === "meter" && option_to === "kilometer"){
+                // This is  meter to kilometer formula
+                result.value = Number(input.value) * 0.001;
+            }else if (option_from === "meter" && option_to === "centimeter"){
+                // This is meter to centimeter formula
+                result.value = Number(input.value) * 100;
+            }else if (option_from === "meter" && option_to === "meter"){
+                // This is meter to meter formula
+                result.value = input.value;
+            }
+
+            if (option_from === "kilometer" && option_to === "meter") {
+                // This is kilometer to meter formala
+                result.value = Number(input.value) * 1000;
+            } else if (option_from === "kilometer" && option_to === "centimeter") {
+                // This is kilometer to centimeter formula
+                result.value = Number(input.value) * 100000;
+            } else if (option_from === "kilometer" && option_to === "kilometer") {
+                // This is centimeter to centimeter formula
+                result.value = input.value
+            }   
+
+            if (option_from === "centimeter" && option_to === "kilometer") {
+                //this is Centimeter to kilometer formula
+                result.value = Number(input.value) * 0.00001;
+            } else if (option_from === "centimeter" && option_to === "meter") {
+                //this is Centimeter to meter formula
+                result.value = Number(input.value) * 0.01;
+            } else if (option_from === "centimeter" && option_to === "centimeter") {
+                //this is Centimeter to Centimeter formula
+                result.value = input.value;
+            }
+        }
+    </script>
+</body>
+</html>
