@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="../css/cssConverters/converterStyle.css">
+    <title>Conversor de Volume</title>
+</head>
+
+<body>
+
+    <div id="container">
+        <div id="title">
+            <h1 id="title">Convesor de Volume</h1>
+        </div>
+    
+        <div id="conversor">
+            <div id="div-entrada">
+                <select name="entrada" id="selecaoEntrada" onchange="appConvert()">
+                    <option value="mililitro">Mililitros</option>
+                    <option value="centimetroCubico">Centímetros Cúbicos</option>
+                    <option value="litro">Litros</option>
+                    <option value="metroCubico">Metros Cúbicos</option>
+                    <option value="polegadaCubica">Polegadas Cúbicas</option>
+                    <option value="pesCubico">Pés Cúbicos</option>
+                    <option value="jardaCubica">JardasCúbicas</option>
+                </select>
+    
+                <input id="entrada" type="number" onkeyup="appConvert()">
+            </div>
+    
+            <span class="material-symbols-outlined" id="igual"> equal </span>
+    
+            <div id="div-saida">
+                <select name="saida" id="selecaoSaida" onchange="appConvert()">
+                    <option value="mililitro">Mililitros</option>
+                    <option value="centimetroCubico">Centímetros Cúbicos</option>
+                    <option value="litro">Litros</option>
+                    <option value="metroCubico">Metros Cúbicos</option>
+                    <option value="polegadaCubica">Polegadas Cúbicas</option>
+                    <option value="pesCubico">Pés Cúbicos</option>
+                    <option value="jardaCubica">JardasCúbicas</option>
+                </select>
+    
+                <input id="saida" type="number" onchange="appConvert()">
+            </div>
+        </div>
+        
+    </div>
+
+    <script>
+        // Recebe os valores de input e output
+        var input = document.querySelector("#entrada");
+        var output = document.querySelector("#saida");
+
+        var valueInput = input.value;
+        var valueOutput = output.value;
+
+        // Recebe os valores do select
+        var inputSelect = document.querySelector("#selecaoEntrada")
+        var outputSelect = document.querySelector("#selecaoSaida")
+
+        var optionInputSelect = inputSelect.value
+        var optionOutputSelect = outputSelect.value
+
+        // Adiciona os eventos Input
+        // input.addEventListener("keyup", appConvertInput); // "keyup" - Ocorre quando o usuário liberar uma tecla do teclado
+        // inputSelect.addEventListener("change", appConvertInput); // "change" - Ocorre quando o valor de algum elemento do HTML é alterado
+        // output.addEventListener("change", appConvertInput);
+
+        // Funções de conversão
+
+        //Mililitros
+        function mililitro_centimetroCubico() {
+            output.value = input.value
+        }
+
+        function mililitro_litro() {
+            output.value = Number(input.value) / 1000
+        }
+
+        function mililitro_metroCubico() {
+            output.value = (Number(input.value) / 1e+6).toFixed(6)
+        }
+
+        function mililitro_polegadaCubica() {
+            output.value = Number(input.value) / 16.387
+        }
+
+        function mililitro_pesCubico() {
+            output.value = Number(input.value) / 28320
+        }
+
+        function mililitro_jardaCubica() {
+            output.value = Number(input.value) / 764600
+        }
+
+
+        //Centimetro Cubicos
+        function centimetroCubico_mililitro() {
+            output.value = input.value
+        }
+
+        function centimetroCubico_litro() {
+            output.value = Number(input.value) / 1000
+        }
+
+        function centimetroCubico_metroCubico() {
+            output.value = (Number(input.value) / 1e+6).toFixed(6)
+        }
+
+        function centimetroCubico_polegadaCubica() {
+            output.value = Number(input.value) / 16.387
+        }
+
+        function centimetroCubico_pesCubico() {
+            output.value = Number(input.value) / 28320
+        }
+
+        function centimetroCubico_jardaCubica() {
+            output.value = Number(input.value) / 764600
+        }
+
+
+
+        //Litros
+        function litro_mililitro() {
+            output.value = Number(input.value) * 1000
+        }
+
+        function litro_centimetroCubico() {
+            output.value = Number(input.value) * 1000
+        }
+
+        function litro_metroCubico() {
+            output.value = Number(input.value) / 1000
+        }
+
+        function litro_polegadaCubica() {
+            output.value = Number(input.value) * 61.024
+        }
+
+        function litro_pesCubico() {
+            output.value = Number(input.value) / 28.317
+        }
+
+        function litro_jardaCubica() {
+            output.value = Number(input.value) / 764.6
+        }
+
+
+        //Metros Cubicos
+        function metroCubico_mililitro() {
+            output.value = Number(input.value) * 1e+6
+        }
+
+        function metroCubico_centimetroCubico() {
+            output.value = Number(input.value) * 1e+6
+        }
+
+        function metroCubico_litro() {
+            output.value = Number(input.value) * 1000
+        }
+
+        function metroCubico_polegadaCubica() {
+            output.value = Number(input.value) * 61020
+        }
+
+        function metroCubico_pesCubico() {
+            output.value = Number(input.value) * 35.315
+        }
+
+        function metroCubico_jardaCubica() {
+            output.value = Number(input.value) * 1.308
+        }
+
+
+        //Polegada Cubica
+        function polegadaCubica_mililitro() {
+            output.value = Number(input.value) * 16.387
+        }
+
+        function polegadaCubica_centimetroCubico() {
+            output.value = Number(input.value) * 16.387
+        }
+
+        function polegadaCubica_litro() {
+            output.value = Number(input.value) / 61.024
+        }
+
+        function polegadaCubica_metroCubico() {
+            output.value = Number(input.value) / 61020
+        }
+
+        function polegadaCubica_pesCubico() {
+            output.value = Number(input.value) / 1728
+        }
+
+        function polegadaCubica_jardaCubica() {
+            output.value = Number(input.value) / 46660
+        }
+
+        //Pes Cubicas
+        function pesCubico_mililitro() {
+            output.value = Number(input.value) * 28320
+        }
+
+        function pesCubico_centimetroCubico() {
+            output.value = Number(input.value) * 28320
+        }
+
+        function pesCubico_litro() {
+            output.value = Number(input.value) * 28.317
+        }
+
+        function pesCubico_metroCubico() {
+            output.value = Number(input.value) / 35.315
+        }
+
+        function pesCubico_polegadaCubica() {
+            output.value = Number(input.value) * 1728
+        }
+
+        function pesCubico_jardaCubica() {
+            output.value = Number(input.value) / 27
+        }
+
+        //Jarda Cúbica
+        function jardaCubica_mililitro() {
+            output.value = Number(input.value) * 764600
+        }
+
+        function jardaCubica_centimetroCubico() {
+            output.value = Number(input.value) * 764600
+        }
+
+        function jardaCubica_litro() {
+            output.value = Number(input.value) * 764.6
+        }
+
+        function jardaCubica_metroCubico() {
+            output.value = Number(input.value) / 1.308
+        }
+
+        function jardaCubica_polegadaCubica() {
+            output.value = Number(input.value) * 46660
+        }
+
+        function jardaCubica_pesCubico() {
+            output.value = Number(input.value) * 27
+        }
+
+
+        function appConvert() {
+
+            optionInput = inputSelect.value;
+            optionOutput = outputSelect.value;
+
+            if (optionInput === "mililitro" && optionOutput === "mililitro") {
+                // Mililitro para mililitro
+                output.value = input.value;
+            } else if (optionInput === "mililitro" && optionOutput === "centimetroCubico") {
+                // Mililitro para centimetro cubico
+                return mililitro_centimetroCubico();
+            } else if (optionInput === "mililitro" && optionOutput === "litro") {
+                //Mililitro para litro
+                return mililitro_litro();
+            } else if (optionInput === "mililitro" && optionOutput === "metroCubico") {
+                //Mililitro para metrocubico
+                return mililitro_metroCubico();
+            } else if (optionInput === "mililitro" && optionOutput === "polegadaCubica") {
+                //Mililitro para polegadas cubicas
+                return mililitro_polegadaCubica();
+            } else if (optionInput === "mililitro" && optionOutput === "pesCubico") {
+                // Mililitro para pes Cubicos
+                return mililitro_pesCubico();
+            } else if (optionInput === "mililitro" && optionOutput === "jardaCubica") {
+                // Mililitro para jardas Cubicas
+                return mililitro_jardaCubica();
+            }
+            //Centimetro Cubico
+            if (optionInput === "centimetroCubico" && optionOutput === "mililitro") {
+                //CentimetroCubico_mililitro
+                return centimetroCubico_mililitro();
+            } else if (optionInput === "centimetroCubico" && optionOutput === "centimetroCubico") {
+                //CentimetroCubico_CentimetroCubico
+                output.value = input.value;
+            } else if (optionInput === "centimetroCubico" && optionOutput === "litro") {
+                //CentimetroCubico_litro
+                return centimetroCubico_litro();
+            } else if (optionInput === "centimetroCubico" && optionOutput === "metroCubico") {
+                //CentimetroCubico_metroCubico
+                return centimetroCubico_metroCubico();
+            } else if (optionInput === "centimetroCubico" && optionOutput === "polegadaCubica") {
+                //CentimetroCubico_polegadaCubica
+                return centimetroCubico_polegadaCubica();
+            } else if (optionInput === "centimetroCubico" && optionOutput === "pesCubico") {
+                //CentimetroCubico_pesCubico
+                return centimetroCubico_pesCubico();
+            } else if (optionInput === "centimetroCubico" && optionOutput === "jardaCubica") {
+                //CentimetroCubico_jardaCubica
+                return centimetroCubico_jardaCubica();
+            }
+
+
+            //litro
+            if (optionInput === "litro" && optionOutput === "mililitro") {
+                //litro para mililitro
+                return litro_mililitro();
+            } else if (optionInput === "litro" && optionOutput === "centimetroCubico") {
+                //litro para centimetroCubico
+                return litro_centimetroCubico();
+            } else if (optionInput === "litro" && optionOutput === "litro") {
+                //litro para litro
+                output.value = input.value;
+            } else if (optionInput === "litro" && optionOutput === "metroCubico") {
+                //litro para metroCubico
+                return litro_metroCubico();
+            } else if (optionInput === "litro" && optionOutput === "polegadaCubica") {
+                //litro para polegadaCubica
+                return litro_polegadaCubica();
+            } else if (optionInput === "litro" && optionOutput === "pesCubico") {
+                //litro para pesCubicos
+                return litro_pesCubico();
+            } else if (optionInput === "litro" && optionOutput === "jardaCubica") {
+                //litro para jardasCubicas
+                return litro_jardaCubica();
+            }
+            //MetrosCubicos	
+            if (optionInput === "metroCubico" && optionOutput === "mililitro") {
+                return metroCubico_mililitro();
+            } else if (optionInput === "metroCubico" && optionOutput === "centimetroCubico") {
+                return metroCubico_centimetroCubico();
+            } else if (optionInput === "metroCubico" && optionOutput === "litro") {
+                return metroCubico_litro();
+            } else if (optionInput === "metroCubico" && optionOutput === "metroCubico") {
+                output.value = input.value;
+            } else if (optionInput === "metroCubico" && optionOutput === "polegadaCubica") {
+                return metroCubico_polegadaCubica();
+            } else if (optionInput === "metroCubico" && optionOutput === "pesCubico") {
+                return metroCubico_pesCubico();
+            } else if (optionInput === "metroCubico" && optionOutput === "jardaCubica") {
+                return metroCubico_jardaCubica();
+            }
+
+
+
+            if (optionInput === "polegadaCubica" && optionOutput === "mililitro") {
+                return polegadaCubica_mililitro();
+
+            } else if (optionInput === "polegadaCubica" && optionOutput === "centimetroCubico") {
+                return polegadaCubica_centimetroCubico();
+            } else if (optionInput === "polegadaCubica" && optionOutput === "litro") {
+                return polegadaCubica_litro();
+            } else if (optionInput === "polegadaCubica" && optionOutput === "metroCubico") {
+                return polegadaCubica_metroCubico();
+            } else if (optionInput === "polegadaCubica" && optionOutput === "polegadaCubica") {
+                output.value = input.value;
+            } else if (optionInput === "polegadaCubica" && optionOutput === "pesCubico") {
+                return polegadaCubica_pesCubico();
+            } else if (optionInput === "polegadaCubica" && optionOutput === "jardaCubica") {
+                return polegadaCubica_jardaCubica();
+            }
+
+
+
+            if (optionInput === "pesCubico" && optionOutput === "mililitro") {
+                return pesCubico_mililitro();
+            } else if (optionInput === "pesCubico" && optionOutput === "centimetroCubico") {
+                return pescubico_centimetroCubico();
+            } else if (optionInput === "pesCubico" && optionOutput === "litro") {
+                return pesCubico_litro();
+            } else if (optionInput === "pesCubico" && optionOutput === "metroCubico") {
+                return pesCubico_metroCubico();
+            } else if (optionInput === "pesCubico" && optionOutput === "polegadaCubica") {
+                return pesCubico_polegadaCubica();
+            } else if (optionInput === "pesCubico" && optionOutput === "pesCubico") {
+                output.value = input.value;
+            } else if (optionInput === "pesCubico" && optionOutput === "jardaCubica") {
+                return pesCubico_jardaCubica();
+            }
+
+
+
+            if (optionInput === "jardaCubica" && optionOutput === "mililitro") {
+                return jardaCubica_mililitro();
+            } else if (optionInput === "jardaCubica" && optionOutput === "centimetroCubico") {
+                return jardaCubica_centimetroCubico();
+            } else if (optionInput === "jardaCubica" && optionOutput === "litro") {
+                return jardaCubica_litro();
+            } else if (optionInput === "jardaCubica" && optionOutput === "metroCubico") {
+                return jardaCubica_metroCubico();
+            } else if (optionInput === "jardaCubica" && optionOutput === "polegadaCubica") {
+                return jardaCubica_polegadaCubica();
+            } else if (optionInput === "jardaCubica" && optionOutput === "pesCubico") {
+                return jardaCubica_pesCubico();
+            } else if (optionInput === "jardaCubica" && optionOutput === "jardaCubica") {
+                output.value = input.value;
+            }
+        }
+
+    </script>
+
+
+</body>
+
+</html>

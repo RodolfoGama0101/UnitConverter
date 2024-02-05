@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="../css/cssConverters/converterStyle.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+
+<body>
+
+    <div id="container">
+        <div id="title">
+            <h1 id="title">Conversor de Comprimento</h1>
+
+        </div>
+
+        <div id="conversor">
+            <div id="div-entrada">
+                <select name="entrada" id="selecaoEntrada" onchange="appConverter()">
+                    <option value="milimetro">Milimetros</option>
+                    <option value="centimetro">Centímetros</option>
+                    <option value="polegada">Polegadas</option>
+                    <option value="metro">Metros</option>
+                    <option value="quilometro">Quilometros</option>
+
+                </select>
+
+                <input id="entrada" type="number" onkeyup="appConverter()">
+            </div>
+
+            <span class="material-symbols-outlined" id="igual"> equal </span>
+
+            <div id="div-saida">
+                <select name="saida" id="selecaoSaida" onchange="appConverter()">
+                    <option value="milimetro">Milimetros</option>
+                    <option value="centimetro">Centímetros</option>
+                    <option value="polegada">Polegadas</option>
+                    <option value="metro">Metros</option>
+                    <option value="quilometro">Quilometros</option>
+                </select>
+
+                <input id="saida" type="number" onchange="appConverter()">
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        var input = document.querySelector("#entrada");
+        var output = document.querySelector("#saida");
+        var selectInput = document.querySelector("#selecaoEntrada");
+        var selectOutput = document.querySelector("#selecaoSaida");
+
+        function appConverter() {
+            var inputValue = Number(input.value);
+            var selectInputValue = selectInput.value;
+            var selectOutputValue = selectOutput.value;
+            switch (selectInputValue + "-" + selectOutputValue) {
+
+                // Milimetros
+                case "milimetro-milimetro":
+                    output.value = inputValue
+                    break;
+
+                case "milimetro-centimetro":
+                    output.value = inputValue / 10;
+                    break;
+
+                case "milimetro-polegada":
+                    output.value = inputValue / 25;
+                    break;
+
+                case "milimetro-metro":
+                    output.value = inputValue / 1000;
+                    break;
+
+                case "milimetro-quilometro":
+                    output.value = inputValue / 100000;
+                    break;
+
+
+
+                // Centímetros
+                case "centimetro-centimetro":
+                    output.value = inputValue
+                    break;
+
+                case "centimetro-milimetro":
+                    output.value = inputValue * 10;
+                    break;
+
+                case "centimetro-polegada":
+                    output.value = inputValue / 2.54;
+                    break;
+
+                case "centimetro-metro":
+                    output.value = inputValue / 100;
+                    break;
+
+                case "centimetro-quilometro":
+                    output.value = inputValue * 10000;
+                    break;
+
+
+                // Polegadas
+                case "polegada-polegada":
+                    output.value = inputValue
+                    break;
+
+                case "polegada-milimetro":
+                    output.value = inputValue * 25.4;
+                    break;
+
+                case "polegada-centimetro":
+                    output.value = inputValue * 2.54;
+                    break;
+
+                case "polegada-metro":
+                    output.value = inputValue / 39.37;
+                    break;
+
+                case "polegada-quilometro":
+                    output.value = inputValue / 39370;
+                    break;
+
+
+                // Metros
+                case "metro-metro":
+                    output.value = inputValue;
+                    break;
+
+                case "metro-milimetro":
+                    output.value = inputValue * 1000;
+                    break;
+
+                case "metro-centimetro":
+                    output.value = inputValue * 100;
+                    break;
+
+                case "metro-polegada":
+                    output.value = inputValue * 39.37;
+                    break;
+
+                case "metro-quilometro":
+                    output.value = inputValue / 1000;
+                    break;
+
+
+                // Quilometro
+                case "quilometro-metro":
+                    output.value = inputValue * 1000;
+                    break;
+
+                case "quilometro-milimetro":
+                    output.value = inputValue * 1e+6;
+                    break;
+
+                case "quilometro-centimetro":
+                    output.value = inputValue * 100000;
+                    break;
+
+                case "quilometro-polegada":
+                    output.value = inputValue * 39370;
+                    break;
+
+                case "quilometro-quilometro":
+                    output.value = inputValue;
+                    break;
+
+            }
+        }
+
+    </script>
+
+
+</body>
+
+</html>

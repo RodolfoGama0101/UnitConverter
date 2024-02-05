@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap'); 
+
+body{
+    font-family: 'Kanit', sans-serif;
+    margin: 0px;
+    margin-top: 0px;
+    padding: 0;
+    color: white;
+    background-color: #282A2E;
+}
+  
+#container {
+    background-color: white;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    flex-direction: column;
+}
+
+.title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#logo {
+    margin-right: 15px;
+    width: 30px;
+    height: 30px;
+}
+
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+    height: 10vh;
+    margin: 0;
+    background-color: #272727;
+}
+
+nav{
+    display: flex;
+    background-color: #272727;
+    margin: 0;
+    width: 20vw; 
+    height: 90vh;
+    float: left; 
+    flex-direction: column;
+}
+
+
+#volume, #comprimento, #peso-massa, #temperatura, #energia, #area, #velocidade, #tempo, #dados, #pressao, #frequencia {
+    display: flex;
+    width: 200px;
+    align-items: center;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.links {
+    display: flex;
+    margin-left: 20px;
+}
+
+img {
+    display: flex;
+    max-width: 30px;
+    max-height: 30px;
+    width: auto;
+    height: auto;
+    margin: 5px;
+}
+
+main{
+    display: flex;
+    background-color: #333333;
+    margin: 0;
+    width: 80vw;
+    height: 90vh;
+    justify-content: center;
+}
+
+iframe{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+.title{
+    margin-left: 20px;
+}
+
+#home, #about{
+    margin-right: 20px;
+}
+
+.links-title{
+    margin-left: 20px;
+}
+
+.credits{
+    margin-right: 20px;
+}
+
+a{
+    text-decoration: none;
+    line-height: 17px;
+}
+
+/* unvisited link */
+a:link {
+    color: white;
+}
+  
+/* visited link */
+a:visited {
+    color: white;
+}
+  
+/* mouse over link */
+a:hover {
+    color: #4CAF50;
+}
+  
+/* selected link */
+a:active {
+    color: #85af87;/*click*/
+}

@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="../css/cssConverters/converterStyle.css">
+    <title>Conversor de Peso e Massa</title>
+</head>
+
+<body>
+
+    <div id="container">
+        <div id="title">
+            <h1 id="titulo">Conversor de Peso e Massa</h1>
+        </div>
+    
+        <div id="conversor">
+            <div id="div-entrada">
+                <select name="entrada" id="selecaoEntrada" onchange="appConvert()">
+                    <option value="quilograma">Quilograma</option>
+                    <option value="grama">Grama</option>
+                    <option value="miligrama">Miligrama</option>
+                    <option value="tonelada">Tonelada</option>
+                    <option value="micrograma">Micrograma</option>
+                    <option value="onca">Onça</option>
+                    <option value="libra">Libra</option>
+                </select>
+    
+                <input id="entrada" type="number" onkeyup="appConvert()">
+            </div>
+    
+            <span class="material-symbols-outlined" id="igual"> equal </span>
+    
+            <div id="div-saida">
+                <select name="saida" id="selecaoSaida" onchange="appConvert()">
+                    <option value="quilograma">Quilograma</option>
+                    <option value="grama">Grama</option>
+                    <option value="miligrama">Miligrama</option>
+                    <option value="tonelada">Tonelada</option>
+                    <option value="micrograma">Micrograma</option>
+                    <option value="onca">Onça</option>
+                    <option value="libra">Libra</option>
+                </select>
+    
+                <input id="saida" type="number" onchange="appConvert()">
+            </div>
+        </div>
+        
+    </div>
+ 
+    <script>
+        // Recebe os valores de input e output
+        var input = document.querySelector("#entrada");
+        var output = document.querySelector("#saida");
+
+        var valueInput = input.value;
+        var valueOutput = output.value;
+
+        // Recebe os valores do select
+        var inputSelect = document.querySelector("#selecaoEntrada")
+        var outputSelect = document.querySelector("#selecaoSaida")
+
+        var optionInputSelect = inputSelect.value
+        var optionOutputSelect = outputSelect.value
+
+        // Adiciona os eventos Input
+        // input.addEventListener("keyup", appConvertInput); // "keyup" - Ocorre quando o usuário liberar uma tecla do teclado
+        // inputSelect.addEventListener("change", appConvertInput); // "change" - Ocorre quando o valor de algum elemento do HTML é alterado
+        // output.addEventListener("change", appConvertInput);
+
+        // Funções de conversão
+
+        // quilograma
+        function quilograma_grama() {
+            output.value = Number(input.value) * 1000
+        }
+
+        function quilograma_miligrama() {
+            output.value = Number(input.value) * 1e+6
+        }
+
+        function quilograma_tonelada() {
+            output.value = Number(input.value) / 1016
+        }
+
+        function quilograma_micrograma() {
+            output.value = Number(input.value) * 1e+9
+        }
+
+        function quilograma_libra() {
+            output.value = Number(input.value) * 2.205
+        }
+
+        function quilograma_onca() {
+            output.value = Number(input.value) * 35.274
+        }
+
+        // grama
+        function grama_quilograma() {
+            output.value = Number(input.value) / 1000
+        }
+
+        function grama_miligrama() {
+            output.value = Number(input.value) * 1000
+        }
+
+        function grama_tonelada() {
+            output.value = Number(input.value) / 1.016e+6
+        }
+
+        function grama_micrograma() {
+            output.value = Number(input.value) * 1e+6
+        }
+
+        function grama_libra() {
+            output.value = Number(input.value) / 453.6
+        }
+
+        function grama_onca() {
+            output.value = Number(input.value) / 28.35
+        }
+
+        // miligrama
+        function miligrama_quilograma() {
+            output.value = Number(input.value) / 1e+6
+        }
+
+        function miligrama_grama() {
+            output.value = Number(input.value) / 1000
+        }
+
+        function miligrama_tonelada() {
+            output.value = Number(input.value) / 1.016e+9
+        }
+
+        function miligrama_micrograma() {
+            output.value = Number(input.value) * 1000
+        }
+
+        function miligrama_libra() {
+            output.value = Number(input.value) / 453600
+        }
+
+        function miligrama_onca() {
+            output.value = Number(input.value) / 28350
+        }
+
+        // micrograma
+        function micrograma_quilograma() {
+            output.value = Number(input.value) / 1e+9
+        }
+
+        function micrograma_grama() {
+            output.value = Number(input.value) / 1e+6
+        }
+
+        function micrograma_tonelada() {
+            output.value = Number(input.value) / 1.016e+12
+        }
+
+        function micrograma_miligrama() {
+            output.value = Number(input.value) / 1000
+        }
+
+        function micrograma_libra() {
+            output.value = Number(input.value) / 4.536e+8
+        }
+
+        function micrograma_onca() {
+            output.value = Number(input.value) / 2.835e+7
+        }
+
+        // tonelada
+        function tonelada_quilograma() {
+            output.value = Number(input.value) * 1016
+        }
+
+        function tonelada_grama() {
+            output.value = Number(input.value) * 1.016e+6
+        }
+
+        function tonelada_miligrama() {
+            output.value = Number(input.value) * 1.016e+9
+        }
+
+        function tonelada_micrograma() {
+            output.value = Number(input.value) * 1.016e+12
+        }
+        
+        function tonelada_libra() {
+            output.value = Number(input.value) * 2240
+        }
+
+        function tonelada_onca() {
+            output.value = Number(input.value) * 35840
+        }
+
+        // libra
+        function libra_quilograma() {
+            output.value = Number(input.value) / 2.205
+        }
+
+        function libra_grama() {
+            output.value = Number(input.value) * 453.6
+        }
+
+        function libra_miligrama() {
+            output.value = Number(input.value) * 453600
+        }
+
+        function libra_micrograma() {
+            output.value = Number(input.value) * 4.536e+8
+        }
+
+        function libra_tonelada() {
+            output.value = Number(input.value) / 2240
+        }
+
+        function libra_onca() {
+            output.value = Number(input.value) * 16
+        }
+                
+        // onca
+            function onca_quilograma() {
+            output.value = Number(input.value) / 35.274
+        }
+
+        function onca_grama() {
+            output.value = Number(input.value) * 28.35
+        }
+
+        function onca_miligrama() {
+            output.value = Number(input.value) * 28350
+        }
+
+        function onca_micrograma() {
+            output.value = Number(input.value) * 2.835e+7
+        }
+
+        function onca_tonelada() {
+            output.value = Number(input.value) / 35840
+        }
+
+        function onca_libra() {
+            output.value = Number(input.value) / 16
+        }
+
+        function appConvert() {
+            
+            optionInput = inputSelect.value;
+            optionOutput = outputSelect.value;
+
+            // Quilograma
+            if (optionInput === "quilograma" && optionOutput === "grama") {
+                // quilograma para grama
+                return quilograma_grama();
+            }else if (optionInput === "quilograma" && optionOutput === "miligrama") {
+                // quilograma para miligrama
+                return quilograma_miligrama();
+            }else if (optionInput === "quilograma" && optionOutput === "quilograma") {
+                // quilograma para quilograma
+                output.value = input.value;
+            }else if (optionInput === "quilograma" && optionOutput === "tonelada") {
+                // quilograma para tonelada
+                return quilograma_tonelada();
+            }else if (optionInput === "quilograma" && optionOutput === "micrograma") {
+                // quilograma para micrograma
+                return quilograma_micrograma();
+            }else if (optionInput === "quilograma" && optionOutput === "libra") {
+                // quilograma para libra
+                return quilograma_libra();
+            }else if (optionInput === "quilograma" && optionOutput === "onca") {
+                // quilograma para onca
+                return quilograma_onca();
+            }
+                       
+            // Grama            
+            if (optionInput === "grama" && optionOutput === "grama") {
+                // grama para grama
+                output.value = input.value;
+            }else if (optionInput === "grama" && optionOutput === "miligrama") {
+                // grama para miligrama
+                return grama_miligrama();
+            }else if (optionInput === "grama" && optionOutput === "quilograma") {
+                // grama para quilograma
+                return grama_quilograma();
+            }else if (optionInput === "grama" && optionOutput === "tonelada") {
+                // grama para tonelada
+                return grama_tonelada();
+            }else if (optionInput === "grama" && optionOutput === "micrograma") {
+                // grama para micrograma
+                return grama_micrograma();
+            }else if (optionInput === "grama" && optionOutput === "libra") {
+                // grama para libra
+                return grama_libra();
+            }else if (optionInput === "grama" && optionOutput === "onca") {
+                // grama para onca
+                return grama_onca();
+            }
+
+            // Miligrama            
+            if (optionInput === "miligrama" && optionOutput === "miligrama") {
+                // miligrama para miligrama
+                output.value = input.value;
+            }else if (optionInput === "miligrama" && optionOutput === "grama") {
+                // miligrama para grama
+                return miligrama_grama();
+            }else if (optionInput === "miligrama" && optionOutput === "quilograma") {
+                // miligrama para quilograma
+                return miligrama_quilograma();
+            }else if (optionInput === "miligrama" && optionOutput === "tonelada") {
+                // miligrama para tonelada
+                return miligrama_tonelada();
+            }else if (optionInput === "miligrama" && optionOutput === "micrograma") {
+                // miligrama para micrograma
+                return miligrama_micrograma();
+            }else if (optionInput === "miligrama" && optionOutput === "libra") {
+                // miligrama para libra
+                return miligrama_libra();
+            }else if (optionInput === "miligrama" && optionOutput === "onca") {
+                // miligrama para onca
+                return miligrama_onca();
+            }
+
+            // Micrograma            
+            if (optionInput === "micrograma" && optionOutput === "micrograma") {
+                // micrograma para micrograma
+                output.value = input.value;
+            }else if (optionInput === "micrograma" && optionOutput === "grama") {
+                // micrograma para grama
+                return micrograma_grama();
+            }else if (optionInput === "micrograma" && optionOutput === "quilograma") {
+                // micrograma para quilograma
+                return micrograma_quilograma;
+            }else if (optionInput === "micrograma" && optionOutput === "tonelada") {
+                // micrograma para tonelada
+                return micrograma_tonelada();
+            }else if (optionInput === "micrograma" && optionOutput === "miligrama") {
+                // micrograma para miligrama
+                return micrograma_miligrama();
+            }else if (optionInput === "micrograma" && optionOutput === "libra") {
+                // micrograma para libra
+                return micrograma_libra();
+            }else if (optionInput === "micrograma" && optionOutput === "onca") {
+                // micrograma para onca
+                return micrograma_onca();
+            }
+            
+            // Tonelada            
+            if (optionInput === "tonelada" && optionOutput === "tonelada") {
+                // tonelada para tonelada
+                output.value = input.value;
+            }else if (optionInput === "tonelada" && optionOutput === "grama") {
+                // tonelada para grama
+                return tonelada_grama();
+            }else if (optionInput === "tonelada" && optionOutput === "quilograma") {
+                // tonelada para quilograma
+                return tonelada_quilograma;
+            }else if (optionInput === "tonelada" && optionOutput === "miligrama") {
+                // tonelada para miligrama
+                return tonelada_miligrama();
+            }else if (optionInput === "tonelada" && optionOutput === "micrograma") {
+                // tonelada para micrograma
+                return tonelada_micrograma();
+            }else if (optionInput === "tonelada" && optionOutput === "libra") {
+                // tonelada para libra
+                return tonelada_libra();
+            }else if (optionInput === "tonelada" && optionOutput === "onca") {
+                // tonelada para onca
+                return tonelada_onca();
+            }
+
+            // Libra            
+            if (optionInput === "libra" && optionOutput === "libra") {
+                // libra para libra
+                output.value = input.value;
+            }else if (optionInput === "libra" && optionOutput === "grama") {
+                // libra para grama
+                return libra_grama();
+            }else if (optionInput === "libra" && optionOutput === "quilograma") {
+                // libra para quilograma
+                return libra_quilograma;
+            }else if (optionInput === "libra" && optionOutput === "miligrama") {
+                // libra para miligrama
+                return libra_miligrama();
+            }else if (optionInput === "libra" && optionOutput === "micrograma") {
+                // libra para micrograma
+                return libra_micrograma();
+            }else if (optionInput === "libra" && optionOutput === "tonelada") {
+                // libra para tonelada
+                return libra_tonelada();
+            }else if (optionInput === "libra" && optionOutput === "onca") {
+                // libra para onca
+                return libra_onca();
+            }
+
+            // Onça            
+            if (optionInput === "onca" && optionOutput === "onca") {
+                // onca para onca
+                output.value = input.value;
+            }else if (optionInput === "onca" && optionOutput === "grama") {
+                // onca para grama
+                return onca_grama();
+            }else if (optionInput === "onca" && optionOutput === "quilograma") {
+                // onca para quilograma
+                return onca_quilograma;
+            }else if (optionInput === "onca" && optionOutput === "miligrama") {
+                // onca para miligrama
+                return onca_miligrama();
+            }else if (optionInput === "onca" && optionOutput === "micrograma") {
+                // onca para micrograma
+                return onca_micrograma();
+            }else if (optionInput === "onca" && optionOutput === "tonelada") {
+                // onca para tonelada
+                return onca_tonelada();
+            }else if (optionInput === "onca" && optionOutput === "libra") {
+                // onca para libra
+                return onca_libra();
+            }
+        }
+
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de dados</title>
+    <link rel="stylesheet" href="../css/cssConverters/converterStyle.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body>
+
+    <div id="container">
+        <div id="title">
+            <h1 id="title">Conversor de Dados</h1>
+        </div>
+    
+        <div id="conversor">
+            <div id="div-entrada">
+                <select name="entrada" id="selecaoEntrada" onchange="appConvert()">
+                    <option value="bit">Bits</option>
+                    <option value="byte">Bytes</option>
+                    <option value="kilobyte">Kilobytes</option>
+                    <option value="megabyte">Megabytes</option>
+                    <option value="gigabyte">Gigabytes</option>
+                    <option value="terabyte">Terabytes</option>
+                    <option value="petabyte">Petabytes</option>
+                </select>
+    
+                <input id="entrada" type="text" onkeyup="appConvert()">
+            </div>
+    
+            <span class="material-symbols-outlined" id="igual"> equal </span>
+    
+            <div id="div-saida">
+                <select name="saida" id="selecaoSaida" onchange="appConvert()">
+                    <option value="bit">Bits</option>
+                    <option value="byte">Bytes</option>
+                    <option value="kilobyte">Kilobytes</option>
+                    <option value="megabyte">Megabytes</option>
+                    <option value="gigabyte">Gigabytes</option>
+                    <option value="terabyte">Terabytes</option>
+                    <option value="petabyte">Petabytes</option>
+                </select>
+    
+                <input id="saida" type="text" onchange="appConvert()">
+            </div>
+        </div>
+        
+    </div>
+
+    <script>
+        // Recebe os valores de input e output
+        var input = document.querySelector("#entrada");
+        var output = document.querySelector("#saida");
+
+        var valueInput = input.value;
+        var valueOutput = output.value;
+
+        // Recebe os valores do select
+        var inputSelect = document.querySelector("#selecaoEntrada")
+        var outputSelect = document.querySelector("#selecaoSaida")
+
+        var optionInputSelect = inputSelect.value
+        var optionOutputSelect = outputSelect.value
+
+        // Adiciona os eventos Input
+        // input.addEventListener("keyup", appConvertInput); // "keyup" - Ocorre quando o usuário liberar uma tecla do teclado
+        // inputSelect.addEventListener("change", appConvertInput); // "change" - Ocorre quando o valor de algum elemento do HTML é alterado
+        // output.addEventListener("change", appConvertInput);
+
+        // Funções de conversão
+
+        // Bits
+        function bit_byte() {
+            output.value = (Number(input.value) / 8)
+        }
+
+        function bit_kilobyte() {
+            output.value = (Number(input.value) / 8000)
+        }
+
+        function bit_megabyte() {
+            output.value = (Number(input.value) / 8e+6)
+        }
+
+        function bit_gigabyte() {
+            output.value = (Number(input.value) / 8e+9)
+        }
+
+        function bit_terabyte() {
+            output.value = (Number(input.value) / 8e+12)
+        }
+
+        function bit_petabyte() {
+            output.value = (Number(input.value) / 8e+15)
+        }
+
+        // Bytes
+        function byte_bit() {
+            output.value = Number(input.value) * 8
+        }
+
+        function byte_kilobyte() {
+            output.value = Number(input.value) / 1000
+        }
+
+        function byte_megabyte() {
+            output.value = Number(input.value) / 1e+6
+        }
+
+        function byte_gigabyte() {
+            output.value = Number(input.value) / 1e+9
+        }
+
+        function byte_terabyte() {
+            output.value = Number(input.value) / 1e+12
+        }
+
+        function byte_petabyte() {
+            output.value = Number(input.value) / 1e+15
+        }
+
+        // Kilobyte
+        function kilobyte_bit() {
+            output.value = Number(input.value) * 8000
+        }
+
+        function kilobyte_byte() {
+            output.value = Number(input.value) * 1000
+        }
+
+        function kilobyte_megabyte() {
+            output.value = Number(input.value) / 1000
+        }
+
+        function kilobyte_gigabyte() {
+            output.value = Number(input.value) / 1e+6
+        }
+
+        function kilobyte_terabyte() {
+            output.value = Number(input.value) / 1e+9
+        }
+
+        function kilobyte_petabyte() {
+            output.value = Number(input.value) / 1e+12
+        }
+
+        // Megabytes
+        function megabyte_bit() {
+            output.value = Number(input.value) * 8e+6
+        }
+
+        function megabyte_byte() {
+            output.value = Number(input.value) * 1e+6
+        }
+
+        function megabyte_kilobyte() {
+            output.value = Number(input.value) * 1000 
+        }
+
+        function megabyte_gigabyte() {
+            output.value = Number(input.value) / 1000
+        }
+
+        function megabyte_terabyte() {
+            output.value = Number(input.value) / 1e+6
+        }
+
+        function megabyte_petabyte() {
+            output.value = Number(input.value) / 1e+9
+        }
+
+        // Gigabytes
+        function gigabyte_bit() {
+            output.value = Number(input.value) * 8e+9
+        }
+
+        function gigabyte_byte() {
+            output.value = Number(input.value) * 1e+9
+        }
+
+        function gigabyte_kilobyte() {
+            output.value = Number(input.value) * 1e+6
+        }
+
+        function gigabyte_megabyte() {
+            output.value = Number(input.value) * 1000
+        }
+
+        function gigabyte_terabyte() {
+            output.value = Number(input.value) / 1000
+        }
+
+        function gigabyte_petabyte() {
+            output.value = Number(input.value) / 1e+6
+        }
+
+        // Terabytes
+        function terabyte_bit() {
+            output.value = Number(input.value) * 8e+12
+        }
+
+        function terabyte_byte() {
+            output.value = Number(input.value) * 1e+12
+        }
+
+        function terabyte_kilobyte() {
+            output.value = Number(input.value) * 1e+9
+        }
+
+        function terabyte_megabyte() {
+            output.value = Number(input.value) * 1e+6
+        }
+
+        function terabyte_gigabyte() {
+            output.value = Number(input.value) * 1000
+        }
+
+        function terabyte_petabyte() {
+            output.value = Number(input.value) / 1000
+        }
+
+        // Petabytes
+        function petabyte_bit() {
+            output.value = Number(input.value) * 8e+15
+        }
+
+        function petabyte_byte() {
+            output.value = Number(input.value) * 1e+15
+        }
+
+        function petabyte_kilobyte() {
+            output.value = Number(input.value) * 1e+12
+        }
+
+        function petabyte_megabyte() {
+            output.value = Number(input.value) * 1e+9
+        }
+
+        function petabyte_gigabyte() {
+            output.value = Number(input.value) * 1e+6
+        }
+
+        function petabyte_terabyte() {
+            output.value = Number(input.value) * 1000
+        }
+
+
+        function appConvert() {
+            
+            optionInput = inputSelect.value;
+            optionOutput = outputSelect.value;
+
+            // Bits
+            if (optionInput === "bit" && optionOutput === "byte") {
+                // Metros para centímetros
+                return bit_byte();
+            }else if (optionInput === "bit" && optionOutput === "kilobyte") {
+                // Metros para metros
+                return bit_kilobyte();
+            }else if (optionInput === "bit" && optionOutput === "megabyte") {
+                // Metros para metros
+                return bit_megabyte();
+            }else if (optionInput === "bit" && optionOutput === "gigabyte") {
+                // Metros para metros
+                return bit_gigabyte();
+            }else if (optionInput === "bit" && optionOutput === "terabyte") {
+                // Metros para metros
+                return bit_terabyte();
+            }else if (optionInput === "bit" && optionOutput === "petabyte") {
+                // Metros para metros
+                return bit_petabyte();
+            }else if (optionInput === "bit" && optionOutput === "bit") {
+                // Metros para metros
+                output.value = input.value;
+            }
+            
+            // Bytes
+            if (optionInput === "byte" && optionOutput === "bit") {
+                // Metros para centímetros
+                return byte_bit();
+            }else if (optionInput === "byte" && optionOutput === "kilobyte") {
+                // Metros para metros
+                return byte_kilobyte();
+            }else if (optionInput === "byte" && optionOutput === "megabyte") {
+                // Metros para metros
+                return byte_megabyte();
+            }else if (optionInput === "byte" && optionOutput === "gigabyte") {
+                // Metros para metros
+                return byte_gigabyte();
+            }else if (optionInput === "byte" && optionOutput === "terabyte") {
+                // Metros para metros
+                return byte_terabyte();
+            }else if (optionInput === "byte" && optionOutput === "petabyte") {
+                // Metros para metros
+                return byte_petabyte();
+            }else if (optionInput === "byte" && optionOutput === "byte") {
+                // Metros para metros
+                output.value = input.value;
+            }
+
+            // Kilobytes
+            if (optionInput === "kilobyte" && optionOutput === "bit") {
+                // Metros para centímetros
+                return kilobyte_bit();
+            }else if (optionInput === "kilobyte" && optionOutput === "byte") {
+                // Metros para metros
+                return kilobyte_byte();
+            }else if (optionInput === "kilobyte" && optionOutput === "megabyte") {
+                // Metros para metros
+                return kilobyte_megabyte();
+            }else if (optionInput === "kilobyte" && optionOutput === "gigabyte") {
+                // Metros para metros
+                return kilobyte_gigabyte();
+            }else if (optionInput === "kilobyte" && optionOutput === "terabyte") {
+                // Metros para metros
+                return kilobyte_terabyte();
+            }else if (optionInput === "kilobyte" && optionOutput === "petabyte") {
+                // Metros para metros
+                return kilobyte_petabyte();
+            }else if (optionInput === "kilobyte" && optionOutput === "kilobyte") {
+                // Metros para metros
+                output.value = input.value;
+            }
+
+            // Megabytes
+            if (optionInput === "megabyte" && optionOutput === "bit") {
+                // Metros para centímetros
+                return megabyte_bit();
+            }else if (optionInput === "megabyte" && optionOutput === "byte") {
+                // Metros para metros
+                return megabyte_byte();
+            }else if (optionInput === "megabyte" && optionOutput === "kilobyte") {
+                // Metros para metros
+                return megabyte_kilobyte();
+            }else if (optionInput === "megabyte" && optionOutput === "gigabyte") {
+                // Metros para metros
+                return megabyte_gigabyte();
+            }else if (optionInput === "megabyte" && optionOutput === "terabyte") {
+                // Metros para metros
+                return megabyte_terabyte();
+            }else if (optionInput === "megabyte" && optionOutput === "petabyte") {
+                // Metros para metros
+                return megabyte_petabyte();
+            }else if (optionInput === "megabyte" && optionOutput === "megabyte") {
+                // Metros para metros
+                output.value = input.value;
+            }
+
+            // Gigabytes
+            if (optionInput === "gigabyte" && optionOutput === "bit") {
+                // Metros para centímetros
+                return gigabyte_bit();
+            }else if (optionInput === "gigabyte" && optionOutput === "byte") {
+                // Metros para metros
+                return gigabyte_byte();
+            }else if (optionInput === "gigabyte" && optionOutput === "kilobyte") {
+                // Metros para metros
+                return gigabyte_kilobyte();
+            }else if (optionInput === "gigabyte" && optionOutput === "megabyte") {
+                // Metros para metros
+                return gigabyte_megabyte();
+            }else if (optionInput === "gigabyte" && optionOutput === "terabyte") {
+                // Metros para metros
+                return gigabyte_terabyte();
+            }else if (optionInput === "gigabyte" && optionOutput === "petabyte") {
+                // Metros para metros
+                return gigabyte_petabyte();
+            }else if (optionInput === "gigabyte" && optionOutput === "gigabyte") {
+                // Metros para metros
+                output.value = input.value;
+            }
+
+            // Terabytes
+            if (optionInput === "terabyte" && optionOutput === "bit") {
+                // Metros para centímetros
+                return terabyte_bit();
+            }else if (optionInput === "terabyte" && optionOutput === "byte") {
+                // Metros para metros
+                return terabyte_byte();
+            }else if (optionInput === "terabyte" && optionOutput === "kilobyte") {
+                // Metros para metros
+                return terabyte_kilobyte();
+            }else if (optionInput === "terabyte" && optionOutput === "megabyte") {
+                // Metros para metros
+                return terabyte_megabyte();
+            }else if (optionInput === "terabyte" && optionOutput === "gigabyte") {
+                // Metros para metros
+                return terabyte_gigabyte();
+            }else if (optionInput === "terabyte" && optionOutput === "petabyte") {
+                // Metros para metros
+                return terabyte_petabyte();
+            }else if (optionInput === "terabyte" && optionOutput === "terabyte") {
+                // Metros para metros
+                output.value = input.value;
+            }
+
+            // Petabytes
+            if (optionInput === "petabyte" && optionOutput === "bit") {
+                // Metros para centímetros
+                return petabyte_bit();
+            }else if (optionInput === "petabyte" && optionOutput === "byte") {
+                // Metros para metros
+                return petabyte_byte();
+            }else if (optionInput === "petabyte" && optionOutput === "kilobyte") {
+                // Metros para metros
+                return petabyte_kilobyte();
+            }else if (optionInput === "petabyte" && optionOutput === "megabyte") {
+                // Metros para metros
+                return petabyte_megabyte();
+            }else if (optionInput === "petabyte" && optionOutput === "gigabyte") {
+                // Metros para metros
+                return petabyte_gigabyte();
+            }else if (optionInput === "petabyte" && optionOutput === "terabyte") {
+                // Metros para metros
+                return petabyte_terabyte();
+            }else if (optionInput === "petabyte" && optionOutput === "petabyte") {
+                // Metros para metros
+                output.value = input.value;
+            }
+        }
+
+    </script>
+
+
+</body>
+</html>

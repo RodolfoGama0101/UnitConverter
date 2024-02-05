@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="../css/cssConverters/converterStyle.css">
+    <title>Calculator</title>
+</head>
+
+<body>
+
+    <div id="container">
+        <div id="title">
+            <h1 id="title">Conversor de Tempo</h1>
+        </div>
+    
+        <div id="conversor">
+            <div id="div-entrada">
+                <select name="entrada" id="selecaoEntrada" onchange="appConvert()">
+                    <option value="segundo">Segundos</option>
+                    <option value="minuto">Minutos</option>
+                    <option value="hora">Horas</option>
+                    <option value="dia">Dias</option>
+                    <option value="semana">Semanas</option>
+                    <option value="mes">Mês</option>
+                    <option value="ano">Anos</option>
+                </select>
+    
+                <input id="entrada" type="number" onkeyup="appConvert()">
+            </div>
+    
+            <span class="material-symbols-outlined" id="igual"> equal </span>
+    
+            <div id="div-saida">
+                <select name="saida" id="selecaoSaida" onchange="appConvert()">
+                    <option value="segundo">Segundos</option>
+                    <option value="minuto">Minutos</option>
+                    <option value="hora">Horas</option>
+                    <option value="dia">Dias</option>
+                    <option value="semana">Semanas</option>
+                    <option value="mes">Mês</option>
+                    <option value="ano">Anos</option>
+                </select>
+    
+                <input id="saida" type="number" onchange="appConvert()">
+            </div>
+        </div>
+        
+    </div>
+ 
+    <script>
+        // Recebe os valores de input e output
+        var input = document.querySelector("#entrada");
+        var output = document.querySelector("#saida");
+
+        var valueInput = input.value;
+        var valueOutput = output.value;
+
+        // Recebe os valores do select
+        var inputSelect = document.querySelector("#selecaoEntrada")
+        var outputSelect = document.querySelector("#selecaoSaida")
+
+        var optionInputSelect = inputSelect.value
+        var optionOutputSelect = outputSelect.value
+
+        // Adiciona os eventos Input
+        // input.addEventListener("keyup", appConvertInput); // "keyup" - Ocorre quando o usuário liberar uma tecla do teclado
+        // inputSelect.addEventListener("change", appConvertInput); // "change" - Ocorre quando o valor de algum elemento do HTML é alterado
+        // output.addEventListener("change", appConvertInput);
+
+        // Funções de conversão
+
+        // Segundo
+        function segundo_minuto() {
+            output.value = Number(input.value) / 60
+        }
+
+        function segundo_hora() {
+            output.value = Number(input.value) / 3600
+        }
+
+        function segundo_dia() {
+            output.value = Number(input.value) / 86400
+        }
+
+        function segundo_semana() {
+            output.value = Number(input.value) / 604800
+        }
+
+        function segundo_mes() {
+            output.value = Number(input.value) / 2.628e+6
+        }
+
+        function segundo_ano() {
+            output.value = Number(input.value) / 3.154e+7
+
+        }
+
+        // Minuto
+        function minuto_segundo() {
+            output.value = Number(input.value) * 60
+        }
+
+        function minuto_hora() {
+            output.value = Number(input.value) / 60 
+        }
+
+        function minuto_dia() {
+            output.value = Number(input.value) / 1440
+        }
+
+        function minuto_semana() {
+            output.value = Number(input.value) / 10080
+        }
+
+        function minuto_mes() {
+            output.value = Number(input.value) / 43800
+        }
+
+        function minuto_ano() {
+            output.value = Number(input.value) / 525600
+        }
+
+        // Hora
+        function hora_segundo() {
+            output.value = Number(input.value) * 3600
+        }
+
+        function hora_minuto() {
+            output.value = Number(input.value) * 60 
+        }
+
+        function hora_dia() {
+            output.value = Number(input.value) / 24
+        }
+
+        function hora_semana() {
+            output.value = Number(input.value) / 168
+        }
+
+        function hora_mes() {
+            output.value = Number(input.value) / 730
+        }
+
+        function hora_ano() {
+            output.value = Number(input.value) / 8760
+        }
+        
+        // Dia
+        function dia_segundo() {
+            output.value = Number(input.value) * 86400
+        }
+
+        function dia_minuto() {
+            output.value = Number(input.value) * 1440
+        }
+
+        function dia_hora() {
+            output.value = Number(input.value) * 24
+        }
+
+        function dia_semana() {
+            output.value = Number(input.value) / 7
+        }
+
+        function dia_mes() {
+            output.value = Number(input.value) / 30.417
+        }
+
+        function dia_ano() {
+            output.value = Number(input.value) / 365
+        }
+        
+        // Semana
+        function semana_segundo() {
+            output.value = Number(input.value) * 604800
+        }
+
+        function semana_minuto() {
+            output.value = Number(input.value) * 10080
+        }
+        
+        function semana_hora() {
+            output.value = Number(input.value) * 168
+        }
+
+        function semana_dia() {
+            output.value = Number(input.value) * 7
+        }
+
+        function semana_mes() {
+            output.value = Number(input.value) / 4.345
+        }
+
+        function semana_ano() {
+            output.value = Number(input.value) / 52.143
+        }
+         
+        // Mês
+        function mes_segundo() {
+            output.value = Number(input.value) * 2.628e+6
+        }
+
+        function mes_minuto() {
+            output.value = Number(input.value) * 43800
+        }
+        
+        function mes_hora() {
+            output.value = Number(input.value) * 730
+        }
+
+        function mes_dia() {
+            output.value = Number(input.value) * 30.417
+        }
+
+        function mes_ano() {
+            output.value = Number(input.value) / 12
+        }
+
+        // Ano
+        function ano_segundo() {
+            output.value = Number(input.value) * 3.154e+7
+        }
+
+        function ano_minuto() {
+            output.value = Number(input.value) * 525600
+        }
+
+        function ano_hora() {
+            output.value = Number(input.value) * 8760
+        }
+        
+        function ano_dia() {
+            output.value = Number(input.value) * 365
+        }
+
+        function ano_semana() {
+            output.value = Number(input.value) * 52.143
+        }
+
+        function ano_mes() {
+            output.value = Number(input.value) * 12
+        }
+
+        function appConvert() {
+            
+            optionInput = inputSelect.value;
+            optionOutput = outputSelect.value;
+
+            // Segundo            
+            if (optionInput === "segundo" && optionOutput === "segundo") {
+                // segundo para segundo
+                output.value = input.value;
+            }else if (optionInput === "segundo" && optionOutput === "minuto") {
+                // segundo para minuto
+                return segundo_minuto();
+            }else if (optionInput === "segundo" && optionOutput === "hora") {
+                // segundo para hora
+                return segundo_hora();
+            }else if (optionInput === "segundo" && optionOutput === "dia") {
+                // segundo para dia
+                return segundo_dia();
+            }else if (optionInput === "segundo" && optionOutput === "semana") {
+                // segundo para semana
+                return segundo_semana();
+            }else if (optionInput === "segundo" && optionOutput === "mes") {
+                // segundo para mes
+                return segundo_mes();
+            }else if (optionInput === "segundo" && optionOutput === "ano") {
+                // segundo para ano
+                return segundo_ano();
+            }
+
+            // Minuto            
+            if (optionInput === "minuto" && optionOutput === "minuto") {
+                // minuto para minuto
+                output.value = input.value;
+            }else if (optionInput === "minuto" && optionOutput === "segundo") {
+                // minuto para segundo
+                return minuto_segundo();
+            }else if (optionInput === "minuto" && optionOutput === "hora") {
+                // minuto para hora
+                return minuto_hora();
+            }else if (optionInput === "minuto" && optionOutput === "dia") {
+                // minuto para dia
+                return minuto_dia();
+            }else if (optionInput === "minuto" && optionOutput === "semana") {
+                // minuto para semana
+                return minuto_semana();
+            }else if (optionInput === "minuto" && optionOutput === "mes") {
+                // minuto para mes
+                return minuto_mes();
+            }else if (optionInput === "minuto" && optionOutput === "ano") {
+                // minuto para ano
+                return minuto_ano();
+            }
+
+            // Hora            
+            if (optionInput === "hora" && optionOutput === "hora") {
+                // hora para hora
+                output.value = input.value;
+            }else if (optionInput === "hora" && optionOutput === "segundo") {
+                // hora para segundo
+                return hora_segundo();
+            }else if (optionInput === "hora" && optionOutput === "minuto") {
+                // hora para minuto
+                return hora_minuto();
+            }else if (optionInput === "hora" && optionOutput === "dia") {
+                // hora para dia
+                return hora_dia();
+            }else if (optionInput === "hora" && optionOutput === "semana") {
+                // hora para semana
+                return hora_semana();
+            }else if (optionInput === "hora" && optionOutput === "mes") {
+                // hora para mes
+                return hora_mes();
+            }else if (optionInput === "hora" && optionOutput === "ano") {
+                // hora para ano
+                return hora_ano();
+            }
+
+            // Dia            
+            if (optionInput === "dia" && optionOutput === "dia") {
+                // dia para dia
+                output.value = input.value;
+            }else if (optionInput === "dia" && optionOutput === "segundo") {
+                // dia para segundo
+                return dia_segundo();
+            }else if (optionInput === "dia" && optionOutput === "minuto") {
+                // dia para minuto
+                return dia_minuto();
+            }else if (optionInput === "dia" && optionOutput === "hora") {
+                // dia para hora
+                return dia_hora();
+            }else if (optionInput === "dia" && optionOutput === "semana") {
+                // dia para semana
+                return dia_semana();
+            }else if (optionInput === "dia" && optionOutput === "mes") {
+                // dia para mes
+                return dia_mes();
+            }else if (optionInput === "dia" && optionOutput === "ano") {
+                // dia para ano
+                return dia_ano();
+            }
+        
+            // Semana            
+            if (optionInput === "semana" && optionOutput === "semana") {
+                // semana para semana
+                output.value = input.value;
+            }else if (optionInput === "semana" && optionOutput === "segundo") {
+                // semana para segundo
+                return semana_segundo();
+            }else if (optionInput === "semana" && optionOutput === "minuto") {
+                // semana para minuto
+                return semana_minuto();
+            }else if (optionInput === "semana" && optionOutput === "hora") {
+                // semana para hora
+                return semana_hora();
+            }else if (optionInput === "semana" && optionOutput === "dia") {
+                // semana para dia
+                return semana_dia();
+            }else if (optionInput === "semana" && optionOutput === "mes") {
+                // semana para mes
+                return semana_mes();
+            }else if (optionInput === "semana" && optionOutput === "ano") {
+                // semana para ano
+                return semana_ano();
+            }
+
+            // Mês            
+            if (optionInput === "mes" && optionOutput === "mes") {
+                // mes para mes
+                output.value = input.value;
+            }else if (optionInput === "mes" && optionOutput === "segundo") {
+                // mes para segundo
+                return mes_segundo();
+            }else if (optionInput === "mes" && optionOutput === "minuto") {
+                // mes para minuto
+                return mes_minuto();
+            }else if (optionInput === "mes" && optionOutput === "hora") {
+                // mes para hora
+                return mes_hora();
+            }else if (optionInput === "mes" && optionOutput === "dia") {
+                // mes para dia
+                return mes_dia();
+            }else if (optionInput === "mes" && optionOutput === "semana") {
+                // mes para semana
+                return mes_semana();
+            }else if (optionInput === "mes" && optionOutput === "ano") {
+                // mes para ano
+                return mes_ano();
+            }
+
+            // Ano            
+            if (optionInput === "ano" && optionOutput === "ano") {
+                // ano para ano
+                output.value = input.value;
+            }else if (optionInput === "ano" && optionOutput === "segundo") {
+                // ano para segundo
+                return ano_segundo();
+            }else if (optionInput === "ano" && optionOutput === "minuto") {
+                // ano para minuto
+                return ano_minuto();
+            }else if (optionInput === "ano" && optionOutput === "hora") {
+                // ano para hora
+                return ano_hora();
+            }else if (optionInput === "ano" && optionOutput === "semana") {
+                // ano para semana
+                return ano_semana();
+            }else if (optionInput === "ano" && optionOutput === "mes") {
+                // ano para mes
+                return ano_mes();
+            }
+
+        }
+
+    </script>
+
+
+</body>
+</html>

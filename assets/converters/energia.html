@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="../css/cssConverters/converterStyle.css">
+    <title>Calculator</title>
+</head>
+<body>
+
+    <div id="container">
+        <div id="title">
+            <h1 id="title">Conversor de Energia</h1>
+        </div>
+    
+        <div id="conversor">
+            <div id="div-entrada">
+                <select name="entrada" id="selecaoEntrada" onchange="appConvert()">
+                    <option value="eletronvolt">Életrons-Volts</option>
+                    <option value="joule">Joules</option>
+                    <option value="quilojoule">Quilojoules</option>
+                    <option value="caloriatermica">Calorias Térmicas</option>
+                    <option value="caloriaalimentar">Calorias Alimentares</option>
+                    <option value="librapes">Libra-pés</option>
+                    <option value="kilowatthora">Kilowatt-Horas</option>
+                </select>
+    
+                <input id="entrada" type="number" onkeyup="appConvert()">
+            </div>
+    
+            <span class="material-symbols-outlined" id="igual"> equal </span>
+    
+            <div id="div-saida">
+                <select name="saida" id="selecaoSaida" onchange="appConvert()">
+                    <option value="eletronvolt">Életrons-Volts</option>
+                    <option value="joule">Joules</option>
+                    <option value="quilojoule">Quilojoules</option>
+                    <option value="caloriatermica">Calorias Térmicas</option>
+                    <option value="caloriaalimentar">Calorias Alimentares</option>
+                    <option value="librapes">Libra-pés</option>
+                    <option value="kilowatthora">Kilowatt-Horas</option>
+                </select>
+    
+                <input id="saida" type="number" onchange="appConvert()">
+            </div>
+        </div>
+        
+    </div>
+ 
+    <script>
+        // Recebe os valores de input e output
+        var input = document.querySelector("#entrada");
+        var output = document.querySelector("#saida");
+
+        var valueInput = input.value;
+        var valueOutput = output.value;
+
+        // Recebe os valores do select
+        var inputSelect = document.querySelector("#selecaoEntrada")
+        var outputSelect = document.querySelector("#selecaoSaida")
+
+        var optionInputSelect = inputSelect.value
+        var optionOutputSelect = outputSelect.value
+
+        // Adiciona os eventos Input
+        // input.addEventListener("keyup", appConvertInput); // "keyup" - Ocorre quando o usuário liberar uma tecla do teclado
+        // inputSelect.addEventListener("change", appConvertInput); // "change" - Ocorre quando o valor de algum elemento do HTML é alterado
+        // output.addEventListener("change", appConvertInput);
+
+        // Funções de conversão
+
+        // Életrons-Volts
+        function eletronvolt_joule() {
+            output.value = Number(input.value) / 6.242e+18
+        }
+
+        function eletronvolt_quilojoule() {
+            output.value = Number(input.value) / 6.242e+21
+        }
+
+        function eletronvolt_caloriatermica() {
+            output.value = Number(input.value) / 2.611e+19
+        }
+
+        function eletronvolt_caloriaalimentar() {
+            output.value = Number(input.value) / 2.611e+22
+        }
+
+        function eletronvolt_librapes() {
+            output.value = Number(input.value) / 8,462e+18
+        }
+        
+        function eletronvolt_kilowatthora() {
+            output.value = Number(input.value) / 2.247e+25
+        }
+
+        // Joules
+        function joules_eletronvolt() {
+            output.value = Number(input.value) * 6.242e+18
+        }
+
+        function joules_quilojoule() {
+            output.value = Number(input.value) / 1000
+        }
+
+        function joules_caloriatermica() {
+            output.value = Number(input.value) / 4.184
+        }
+
+        function joules_caloriaalimentar() {
+            output.value = Number(input.value) / 4184
+        }
+
+        function joules_librapes() {
+            output.value = Number(input.value) / 1.356
+        }
+
+        function joules_kilowatthora() {
+            output.value = Number(input.value) / 3.6e+6
+        }
+
+        // Quilojoule
+        function quilojoule_eletronvolt() {
+            output.value = Number(input.value) * 6.242e+21
+        }
+
+        function quilojoule_joule() {
+            output.value = Number(input.value) * 1000
+        }
+    
+        function quilojoule_caloriaalimentar() {
+            output.value = Number(input.value) * 239
+        }
+
+        function quilojoule_caloriatermica() {
+            output.value = Number(input.value) / 4.184
+        }
+
+        function quilojoule_librapes() {
+            output.value = Number(input.value) * 737.6
+        }
+
+        function quilojoule_kilowatthora() {
+            output.value = Number(input.value) / 3600
+        }
+
+        //Caloria Térmica
+        
+        function caloriatermica_eletronvolt() {
+            output.value = Number(input.value) * 2.611e+19
+        }
+        
+        function caloriatermica_joule() {
+            output.value = Number(input.value) * 4.184
+        }
+
+        function caloriatermica_quilojoule() {
+            output.value = Number(input.value) / 239
+        }
+        
+        function caloriatermica_caloriaalimentar() {
+            output.value = Number(input.value) / 1000
+        }
+
+        function caloriatermica_librapes() {
+            output.value = Number(input.value) * 3.086
+        }
+
+        function caloriatermica_kilowatthora() {
+            output.value = Number(input.value) / 860400
+        }
+        
+        //Calorias Alimentares
+
+        function caloriaalimentar_eletronvolt() {
+            output.value = Number(input.value) * 2.611e+22
+        }
+
+        function caloriaalimentar_joule() {
+            output.value = Number(input.value) * 4184
+        }
+
+        function caloriaalimentar_quilojoule() {
+            output.value = Number(input.value) * 4.184
+        }
+
+        function caloriaalimentar_caloriatermica() {
+            output.value = Number(input.value) / 1000
+        }
+
+        function caloriaalimentar_librapes() {
+            output.value = Number(input.value) * 3.086
+        }
+
+        function caloriaalimentar_kilowatthora() {
+            output.value = Number(input.value) / 860400
+        }
+
+        // Libra-pés
+
+        function librapes_eletronvolt() {
+            output.value = Number(input.value) * 8.462e+18
+        }
+
+        function librapes_joule() {
+            output.value = Number(input.value) * 1.356
+        }
+
+        function librapes_quilojoule() {
+            output.value = Number(input.value) / 7376
+        }
+
+        function librapes_caloriatermica() {
+            output.value = Number(input.value) / 3.086
+        }
+
+        function librapes_caloriaalimentar() {
+            output.value = Number(input.value) / 3086
+        }
+
+        function librapes_kilowatthora() {
+            output.value = Number(input.value) / 2.655e+6
+        }
+
+        //Kilowatt-Horas
+        
+
+        function kilowatthora_eletronvolt() {
+            output.value = Number(input.value) * 2.247e+25
+        }
+
+        function kilowatthora_joule() {
+            output.value = Number(input.value) * 3.6e+6
+        }
+
+        function kilowatthora_quilojoule() {
+            output.value = Number(input.value) * 3600
+        }
+
+        function kilowatthora_caloriatermica() {
+            output.value = Number(input.value) * 860400
+        }
+
+        function kilowatthora_caloriaalimentar() {
+            output.value = Number(input.value) * 860.4
+        }
+
+        function kilowatthora_librapes() {
+            output.value = Number(input.value) * 2.655e+6
+
+        }
+
+           function appConvert() {
+            
+            optionInput = inputSelect.value;
+            optionOutput = outputSelect.value;
+
+
+            //Életrons-Volts
+
+            if (optionInput === "eletronvolt" && optionOutput === "joule") {
+                //Életrons-Volts
+                return eletronvolt_joule();
+            }else if (optionInput === "eletronvolt" && optionOutput === "quilojoule") {
+                //Életrons-Volts
+                return eletronvolt_quilojoule();
+            }else if (optionInput === "eletronvolt" && optionOutput === "caloriatermica") {
+                //Életrons-Volts
+                return eletronvolt_caloriatermica();
+            }else if (optionInput === "eletronvolt" && optionOutput === "caloriaalimentar") {
+                //Életrons-Volts
+                return eletronvolt_caloriaalimentar();
+            }else if (optionInput === "eletronvolt" && optionOutput === "librapes") {
+                //Életrons-Volts
+                return eletronvolt_librapes();
+            }else if (optionInput === "eletronvolt" && optionOutput === "kilowatthora") {
+                //Életrons-Volts
+                return eletronvolt_kilowatthora();
+
+            }else if (optionInput === "eletronvolt" && optionOutput === "eletronvolt") {
+                output.value = input.value;
+            }
+
+
+            //Joules
+            
+            if (optionInput === "joule" && optionOutput === "eletronvolt") {
+                //Joules
+                return joules_eletronvolt();
+            }else if (optionInput === "joule" && optionOutput === "quilojoule") {
+                //Joules
+                return joules_quilojoule();
+            }else if (optionInput === "joule" && optionOutput === "caloriatermica") {
+                //Joules
+                return joules_caloriatermica();
+            }else if (optionInput === "joule" && optionOutput === "caloriaalimentar") {
+                //Joules
+                return joules_caloriaalimentar();
+            }else if (optionInput === "joule" && optionOutput === "librapes") {
+                //Joules
+                return joules_librapes();
+            }else if (optionInput === "joule" && optionOutput === "kilowatthora") {
+                //Joules
+                return joules_kilowatthora();
+            }else if (optionInput === "joule" && optionOutput === "joule") {
+                output.value = input.value;
+            }
+
+
+            //Quilojoules
+
+            if (optionInput === "quilojoule" && optionOutput === "joule") {
+                //Quilojoules
+                return quilojoules_joule();
+            }else if (optionInput === "quilojoule" && optionOutput === "eletronvolt") {
+                //Quilojoules
+                return quilojoule_eletronvolt();
+            }else if (optionInput === "quilojoule" && optionOutput === "caloriatermica") {
+                //Quilojoules
+                return quilojoule_caloriatermica();
+            }else if (optionInput === "quilojoule" && optionOutput === "caloriaalimentar") {
+                //Quilojoules
+                return quilojoule_caloriaalimentar();
+            }else if (optionInput === "quilojoule" && optionOutput === "librapes") {
+                //Quilojoules
+                return quilojoule_librapes();
+            }else if (optionInput === "quilojoule" && optionOutput === "kilowatthora") {
+            //Quilojoules
+                return quilojoule_kilowatthora();
+
+            }else if (optionInput === "quilojoule" && optionOutput === "quilojoule") {
+                output.value = input.value;
+            }
+                
+
+            //Calorias Térmicas
+
+            if (optionInput === "caloriatermica" && optionOutput === "joule") {
+                //Calorias Térmicas
+                return caloriatermica_joule();
+            }else if (optionInput === "caloriatermica" && optionOutput === "quilojoule") {
+                //Calorias Térmicas
+                return caloriatermica_quilojoule();
+            }else if (optionInput === "caloriatermica" && optionOutput === "eletronvolt") {
+                //Calorias Térmicas
+                return caloriatermica_eletronvolt();
+            }else if (optionInput === "caloriatermica" && optionOutput === "caloriaalimentar") {
+                //Calorias Térmicas
+                return caloriatermica_caloriaalimentar();
+            }else if (optionInput === "caloriatermica" && optionOutput === "librapes") {
+                //Calorias Térmicas
+                return caloriatermica_librapes();
+            }else if (optionInput === "caloriatermica" && optionOutput === "kilowatthora") {
+                //Calorias Térmicas
+                return caloriatermica_kilowatthora();
+            
+            }else if (optionInput === "caloriatermica" && optionOutput === "caloriatermica") {
+                output.value = input.value;
+            }
+
+
+            //Calorias Alimentares
+   
+            if (optionInput === "caloriaalimentar" && optionOutput === "joule") {
+            //Calorias Alimentares
+                return caloriaalimentar_joule();
+            }else if (optionInput === "caloriaalimentar" && optionOutput === "quilojoule") {
+            //Calorias Alimentares
+                return caloriaalimentar_quilojoule();
+            }else if (optionInput === "caloriaalimentar" && optionOutput === "caloriatermica") {
+            //Calorias Alimentares
+                return caloriaalimentar_caloriatermica();
+            }else if (optionInput === "caloriaalimentar" && optionOutput === "eletronvolt") {
+            //Calorias Alimentares
+                return caloriaalimentar_eletronvolt();
+            }else if (optionInput === "caloriaalimentar" && optionOutput === "librapes") {
+            //Calorias Alimentares
+                return caloriaalimentar_librapes();
+            }else if (optionInput === "caloriaalimentar" && optionOutput === "kilowatthora") {
+            //Calorias Alimentares
+                return caloriaalimentar_kilowatthora();
+                
+            }else if (optionInput === "caloriaalimentar" && optionOutput === "caloriaalimentar") {
+                output.value = input.value;
+            }
+
+
+             //Libra-pés
+
+             if (optionInput === "librapes" && optionOutput === "joule") {
+            //Libra-pés
+                return librapes_joule();
+            }else if (optionInput === "librapes" && optionOutput === "quilojoule") {
+            //Libra-pés
+                return librapes_quilojoule();
+            }else if (optionInput === "librapes" && optionOutput === "caloriatermica") {
+            //Libra-pés
+                return librapes_caloriatermica();
+            }else if (optionInput === "librapes" && optionOutput === "caloriaalimentar") {
+            //Libra-pés
+                return librapes_caloriaalimentar();
+            }else if (optionInput === "librapes" && optionOutput === "eletronvolt") {
+            //Libra-pés
+                return librapes_eletronvolt();
+            }else if (optionInput === "librapes" && optionOutput === "kilowatthora") {
+            //Libra-pés
+                return librapes_kilowatthora();
+            
+            }else if (optionInput === "librapes" && optionOutput === "librapes") {
+                output.value = input.value;
+            }
+        
+
+            //Kilowatt-Horas
+
+            if (optionInput === "kilowatthora" && optionOutput === "joule") {
+            //Kilowatt-Horas
+                return kilowatthora_joule();
+            }else if (optionInput === "kilowatthora" && optionOutput === "quilojoule") {
+            //Kilowatt-Horas
+                return kilowatthora_quilojoule();
+            }else if (optionInput === "kilowatthora" && optionOutput === "caloriatermica") {
+            //Kilowatt-Horas
+                return kilowatthora_caloriatermica();
+            }else if (optionInput === "kilowatthora" && optionOutput === "caloriaalimentar") {
+            //Kilowatt-Horas
+                return kilowatthora_caloriaalimentar();
+            }else if (optionInput === "kilowatthora" && optionOutput === "librapes") {
+            //Kilowatt-Horas
+                return kilowatthora_librapes();
+            }else if (optionInput === "kilowatthora" && optionOutput === "eletronvolt") {
+            //Kilowatt-Horas
+                return kilowatthora_eletronvolt();
+                
+            }else if (optionInput === "kilowatthora" && optionOutput === "kilowatthora") {
+                output.value = input.value;
+            }
+        }      
+     </script>
+</body>
+</html>

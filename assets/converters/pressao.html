@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="../css/cssConverters/converterStyle.css">
+    <title>Calculator</title>
+</head>
+
+<body>
+
+    <div id="container">
+
+        <div id="title">
+            <h1 id="title">Conversor de Pressão</h1>
+        </div>
+    
+        <div id="conversor">
+            <div id="div-entrada">
+                <select name="entrada" id="selecaoEntrada" onchange="appConvert()">
+                    <option value="atmosfera">Atmosfera</option>
+                    <option value="bar">Bars</option>
+                    <option value="quilopascals">Quilopascals</option>
+                    <option value="milimetroMercurio">Milímetro de mercúrio</option>
+                    <option value="pascals">Pascals</option>
+                    <option value="libra">Libras por polegadas quadradas</option>
+                </select>
+    
+                <input id="entrada" type="number" onkeyup="appConvert()">
+            </div>
+    
+            <span class="material-symbols-outlined" id="igual"> equal </span>
+    
+            <div id="div-saida">
+                <select name="saida" id="selecaoSaida" onchange="appConvert()">
+                    <option value="atmosfera">Atmosfera</option>
+                    <option value="bar">Bars</option>
+                    <option value="quilopascals">Quilopascals</option>
+                    <option value="milimetroMercurio">Milímetro de mercúrio</option>
+                    <option value="pascals">Pascals</option>
+                    <option value="libra">Libras por polegadas quadradas</option>
+                </select>
+    
+                <input id="saida" type="number" onchange="appConvert()">
+            </div>
+        </div>
+        
+    </div>
+
+    <script>
+        // Recebe os valores de input e output
+        var input = document.querySelector("#entrada");
+        var output = document.querySelector("#saida");
+
+        var valueInput = input.value;
+        var valueOutput = output.value;
+
+        // Recebe os valores do select
+        var inputSelect = document.querySelector("#selecaoEntrada")
+        var outputSelect = document.querySelector("#selecaoSaida")
+
+        var optionInputSelect = inputSelect.value
+        var optionOutputSelect = outputSelect.value
+
+        // Adiciona os eventos Input
+        // input.addEventListener("keyup", appConvertInput); // "keyup" - Ocorre quando o usuário liberar uma tecla do teclado
+        // inputSelect.addEventListener("change", appConvertInput); // "change" - Ocorre quando o valor de algum elemento do HTML é alterado
+        // output.addEventListener("change", appConvertInput);
+
+        // Funções de conversão
+
+        // Atmosfera
+        function atmosfera_bar() {
+            output.value = Number(input.value) * 1.013
+        }
+
+        function atmosfera_quilopascals() {
+            output.value = Number(input.value) * 101.3
+        }
+
+        function atmosfera_milimetroMercurio() {
+            output.value = Number(input.value) * 760
+        }
+
+        function atmosfera_pascals() {
+            output.value = Number(input.value) * 101300
+        }
+
+        function atmosfera_libra() {
+            output.value = Number(input.value) * 14.696
+        }
+
+        // Bars
+
+        function bar_atmosfera() {
+            output.value = Number(input.value) / 1.013
+        }
+
+        function bar_quilopascals() {
+            output.value = Number(input.value) * 100
+        }
+
+        function bar_milimtroMercurio() {
+            output.value = Number(input.value) * 750.1
+        }
+
+        function bar_pascals() {
+            output.value = Number(input.value) * 100000
+        }
+
+        function bar_libra() {
+            output.value = Number(input.value) * 14*504
+        }       
+        
+        //Quilospascals
+        function quilopascals_atmosfera() {
+            output.value = Number(input.value) / 101.3
+        }
+
+        function quilopascals_bar() {
+            output.value = Number(input.value) / 100
+        }
+
+        function quilopascals_milimetroMercurio() {
+            output.value = Number(input.value) * 7.501
+        }
+
+        function quilopascals_pascals() {
+            output.value = Number(input.value) * 1000
+        }
+
+        function quilopascals_libra() {
+            output.value = Number(input.value) / 6.895
+        }
+
+        //Milimetro de mercurio
+
+        function milimetroMercurio_atmosfera() {
+            output.value = Number(input.value) / 760
+        }
+
+        function milimetroMercurio_bar() {
+            output.value = Number(input.value) / 750.1
+        }
+
+        function milimetroMercurio_quilopascals() {
+            output.value = Number(input.value) / 7.501
+        }
+
+        function milimetroMercurio_pascals() {
+            output.value = Number(input.value) * 133.3
+        }
+
+        function milimetroMercurio_libra() {
+            output.value = Number(input.value) / 51.715
+        }
+
+        //Pascals
+
+        function pascals_atmosfera() {
+            output.value = Number(input.value) / 101300
+        }
+
+        function pascals_bar() {
+            output.value = Number(input.value) / 1000000
+        }
+
+        function pascals_quilopascais() {
+            output.value = Number(input.value) / 1000
+        }
+
+        function pascals_milimetroMercurio() {
+            output.value = Number(input.value) / 133.3
+        }
+
+        function pascals_libra() {
+            output.value = Number(input.value) / 6895
+        }
+
+        //Libra por polegada quadrada
+
+        function libra_atmosfera() {
+            output.value = Number(input.value) / 14.696
+        }
+
+        function libra_bar() {
+            output.value = Number(input.value) / 14.504
+        }
+
+        function libra_quilopascals() {
+            output.value = Number(input.value) * 6.895
+        }
+
+        function libra_milimetroMercurio() {
+            output.value = Number(input.value) * 51.715
+        }
+
+        function libra_pascals() {
+            output.value = Number(input.value) * 6895
+        }
+
+
+
+        function appConvert() {
+            
+            optionInput = inputSelect.value;
+            optionOutput = outputSelect.value;
+
+            if (optionInput === "atmosfera" && optionOutput === "atmosfera") {
+                output.value = input.value;
+                
+            }else if (optionInput === "atmosfera" && optionOutput === "bar") {
+                return atmosfera_bar();
+            
+            }else if (optionInput === "atmosfera" && optionOutput === "quilopascals") {
+                return atmosfera_quilopascals();
+            
+            }else if (optionInput === "atmosfera" && optionOutput === "milimetroMercurio") {
+                return atmosfera_milimetroMercurio();
+
+            }else if (optionInput === "atmosfera" && optionOutput === "pascals") {
+                return atmosfera_pascals();
+
+            }else if (optionInput === "atmosfera" && optionOutput === "libra") {
+                return atmosfera_libra();
+            }
+
+            //bar
+            
+            if (optionInput === "bar" && optionOutput === "atmosfera") {
+                return bar_atmosfera();
+                
+            }else if (optionInput === "bar" && optionOutput === "bar") {
+                output.value = input.value;
+            
+            }else if (optionInput === "bar" && optionOutput === "quilopascals") {
+                return bar_quilopascals();
+            
+            }else if (optionInput === "bar" && optionOutput === "milimetroMercurio") {
+                return bar_milimetroMercurio();
+
+            }else if (optionInput === "bar" && optionOutput === "pascals") {
+                return bar_pascals();
+
+            }else if (optionInput === "bar" && optionOutput === "libra") {
+                return bar_libra();
+            }
+
+            //quilopascals
+
+            if (optionInput === "quilopascals" && optionOutput === "atmosfera") {
+                return quilopascals_atmosfera();
+                
+            }else if (optionInput === "quilopascals" && optionOutput === "bar") {
+                return quilopascals_bar();
+            
+            }else if (optionInput === "quilopascals" && optionOutput === "quilopascals") {
+                output.value = input.value;
+            
+            }else if (optionInput === "quilopascals" && optionOutput === "milimetroMercurio") {
+                return quilopascals_milimetroMercurio();
+
+            }else if (optionInput === "quilopascals" && optionOutput === "pascals") {
+                return quilopascals_pascals();
+
+            }else if (optionInput === "quilopascals" && optionOutput === "libra") {
+                return quilopascals_libra();
+            }
+            
+            //milimetroMercurio
+
+            if (optionInput === "milimetroMercurio" && optionOutput === "atmosfera") {
+                return milimetroMercurio_atmosfera();
+                
+            }else if (optionInput === "milimetroMercurio" && optionOutput === "bar") {
+                return milimetroMercurio_bar();
+            
+            }else if (optionInput === "milimetroMercurio" && optionOutput === "quilopascals") {
+                return milimetroMercurio_quilopascals();
+            
+            }else if (optionInput === "milimetroMercurio" && optionOutput === "milimetroMercurio") {
+                output.value = input.value;
+
+            }else if (optionInput === "milimetroMercurio" && optionOutput === "pascals") {
+                return milimetroMercurio_pascals();
+
+            }else if (optionInput === "milimetroMercurio" && optionOutput === "libra") {
+                return milimetroMercurio_libra();
+            }
+            
+            //Pascals
+
+            if (optionInput === "pascals" && optionOutput === "atmosfera") {
+                return pascals_atmosfera();
+                
+            }else if (optionInput === "pascals" && optionOutput === "bar") {
+                return pascals_bar();
+            
+            }else if (optionInput === "pascals" && optionOutput === "quilopascals") {
+                return pascals_quilopascals();
+            
+            }else if (optionInput === "pascals" && optionOutput === "milimetroMercurio") {
+                return pascals_milimetroMercurio();
+
+            }else if (optionInput === "pascals" && optionOutput === "pascals") {
+                output.value = input.value;
+
+            }else if (optionInput === "pascals" && optionOutput === "libra") {
+                return pascals_libra();
+            }
+
+            //Libra
+
+            if (optionInput === "libra" && optionOutput === "atmosfera") {
+                return libra_atmosfera();
+                
+            }else if (optionInput === "libra" && optionOutput === "bar") {
+                return libra_bar();
+            
+            }else if (optionInput === "libra" && optionOutput === "quilopascals") {
+                return libra_quilopascals();
+            
+            }else if (optionInput === "libra" && optionOutput === "milimetroMercurio") {
+                return libra_milimetroMercurio();
+
+            }else if (optionInput === "libra" && optionOutput === "pascals") {
+                return libra_pascals();
+
+            }else if (optionInput === "libra" && optionOutput === "libra") {
+                output.value = input.value;
+            }            
+            
+        }
+
+    </script>
+
+
+</body>
+</html>

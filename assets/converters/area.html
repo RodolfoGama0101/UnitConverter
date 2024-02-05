@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/cssConverters/converterStyle.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <title>Calculator</title>
+</head>
+<body>
+
+    <div id="container">
+        <div id="title">
+            <h1 id="titulo">Conversor de Área</h1>
+        </div>
+
+        <div id="conversor">
+            <div id="div-entrada">
+                <select name="entrada" id="selecaoEntrada" onchange="appConvert()">
+                    <option value="milimetroQuadrado">Milímetros Quadrados</option>
+                    <option value="centimetroQuadrado">Centimmetro Quadrados</option>
+                    <option value="metroQuadrado">Metro Quadrado</option>
+                    <option value="hectare">Hectares</option>
+                    <option value="quilometroQuadrado">Quilômetro Quadrado</option>
+                    <option value="polegadaQuadrada">Polegada Quadrada</option>
+                    <option value="pesQuadrado">Pés Quadrados</option>
+                    <option value="jardaQuadrada">Jardas Quadradas</option>
+                    <option value="milhasQuadrada">Milhas Quadradas</option>
+                </select>
+
+                <input id="entrada" type="number" onkeyup="appConvert()">
+            </div>
+
+            <span class="material-symbols-outlined" id="igual"> = </span>
+
+            <div id="div-saida">
+                <select name="saida" id="selecaoSaida" onchange="appConvert()">
+                    <option value="milimetroQuadrado">Milímetros Quadrados</option>
+                    <option value="centimetroQuadrado">Centimmetro Quadrados</option>
+                    <option value="metroQuadrado">Metro Quadrado</option>
+                    <option value="hectare">Hectares</option>
+                    <option value="quilometroQuadrado">Quilômetro Quadrado</option>
+                    <option value="polegadaQuadrada">Polegada Quadrada</option>
+                    <option value="pesQuadrado">Pés Quadrados</option>
+                    <option value="jardaQuadrada">Jardas Quadradas</option>
+                    <option value="milhasQuadrada">Milhas Quadradas</option>
+                </select>
+
+                <input id="saida" type="number" onkeyup="appConvert()">
+            </div>
+        </div>
+        
+    </div>
+ 
+    <script>
+        var input = document.querySelector("#entrada");
+        var output = document.querySelector("#saida");
+        var selectInput = document.querySelector("#selecaoEntrada");
+        var selectOutput = document.querySelector("#selecaoSaida");
+
+
+        function appConvert() {
+        var inputValue = Number(input.value);
+        var selectInputValue = selectInput.value;
+        var selectOutputValue = selectOutput.value;
+
+            switch (selectInputValue + "-" + selectOutputValue) {
+            
+                // Milímetros Quadrados
+            case "milimetroQuadrado-milimetroQuadrado" :
+                output.value = inputValue 
+                break;
+
+            case "milimetroQuadrado-centimetroQuadrado":
+                output.value = inputValue / 100 ;
+                break;
+
+            case "milimetroQuadrado-metroQuadrado":
+                output.value = inputValue / 1e+6;
+                break;   
+
+            case "milimetroQuadrado-hectare":
+                output.value = inputValue / 1e+10;
+                break;
+
+            case "milimetroQuadrado-quilometroQuadrado":
+                output.value = inputValue /1e+12 ;
+                break;
+
+            case "milimetroQuadrado-polegadaQuadrada":
+                output.value = inputValue /645.2 ;
+                break;                         
+                
+            case "milimetroQuadrado-pesQuadrado":
+                output.value = inputValue /92900 ;
+                break;
+
+            case "milimetroQuadrado-jardaQuadrada":
+                output.value = inputValue /836100;
+                break;
+
+            case "milimetroQuadrado-milhasQuadrada":
+                output.value = inputValue /2.59e+12;
+                break; 
+                
+            // Centimmetro Quadrados
+            case "centimetroQuadrado-milimetroQuadrado":
+                output.value = inputValue *100 ;
+                break;
+
+            case "centimetroQuadrado-centimetroQuadrado":
+                output.value = inputValue 
+                break;
+
+            case "centimetroQuadrado-metroQuadrado":
+                output.value = inputValue /1e+6 ;
+                break;   
+
+            case "centimetroQuadrado-hectare":
+                output.value = inputValue /1e+8 ;
+                break;
+
+            case "centimetroQuadrado-quilometroQuadrado":
+                output.value = inputValue /1e+10 ;
+                break;
+
+            case "centimetroQuadrado-polegadaQuadrada":
+                output.value = inputValue / 6.452;
+                break;                         
+                
+            case "centimetroQuadrado-pesQuadrado":
+                output.value = inputValue / 929;
+                break;
+
+            case "centimetroQuadrado-jardaQuadrada":
+                output.value = inputValue /8361 ;
+                break;
+
+            
+            case "centimetroQuadrado-milhasQuadrada":
+                output.value = inputValue / 2.59e+10 ;
+                break;  
+            
+
+            // Metro Quadrado
+            case "metroQuadrado-milimetroQuadrado":
+                output.value = inputValue *1e+6 ;
+                break;
+
+            case "metroQuadrado-centimetroQuadrado":
+                output.value = inputValue *10000 ;
+                break;
+
+            case "metroQuadrado-metroQuadrado":
+                output.value = inputValue 
+                break;   
+
+            case "metroQuadrado-hectare":
+                output.value = inputValue /10000 ;
+                break;
+
+            case "metroQuadrado-quilometroQuadrado":
+                output.value = inputValue /1e+6 ;
+                break;
+
+            case "metroQuadrado-polegadaQuadrada":
+                output.value = inputValue *1550 ;
+                break;                         
+                
+            case "metroQuadrado-pesQuadrado":
+                output.value = inputValue *10.764 ;
+                break;
+
+            case "metroQuadrado-jardaQuadrada":
+                output.value = inputValue *1.196;
+                break;
+
+            
+            case "metroQuadrado-milhasQuadrada":
+                output.value = inputValue /2.59e+6 ;
+                break;  
+
+
+            // Hectares
+            case "hectare-milimetroQuadrado":
+                output.value = inputValue *1e+10 ;
+                break;
+
+            case "hectare-centimetroQuadrado":
+                output.value = inputValue *1e+8 ;
+                break;
+
+            case "hectare-metroQuadrado":
+                output.value = inputValue *10000 ;
+                break;   
+
+            case "hectare-hectare":
+                output.value = inputValue 
+                break;
+
+            case "hectare-quilometroQuadrado":
+                output.value = inputValue /100 ;
+                break;
+
+            case "hectare-polegadaQuadrada":
+                output.value = inputValue *1.55e+7 ;
+                break;                         
+                
+            case "hectare-pesQuadrado":
+                output.value = inputValue *107600 ;
+                break;
+
+            case "hectare-jardaQuadrada":
+                output.value = inputValue *11960 ;
+                break;
+            
+            case "hectare-milhasQuadrada":
+                output.value = inputValue / 259 ;
+                break;  
+
+
+            // Quilômetro Quadrado
+            case "quilometroQuadrado-milimetroQuadrado":
+                output.value = inputValue *1e+12 ;
+                break;
+
+            case "quilometroQuadrado-centimetroQuadrado":
+                output.value = inputValue *1e+10 ;
+                break;
+
+            case "quilometroQuadrado-metroQuadrado":
+                output.value = inputValue *1e+6;
+                break;   
+
+            case "quilometroQuadrado-hectare":
+                output.value = inputValue *100 ;
+                break;
+
+            case "quilometroQuadrado-quilometroQuadrado":
+                output.value = inputValue 
+                break;
+
+            case "quilometroQuadrado-polegadaQuadrada":
+                output.value = inputValue * 1.55e+9;
+                break;                         
+                
+            case "quilometroQuadrado-pesQuadrado":
+                output.value = inputValue * 1.076e+7;
+                break;
+
+            case "quilometroQuadrado-jardaQuadrada":
+                output.value = inputValue *1.196e+6 ;
+                break;
+
+            
+            case "quilometroQuadrado-milhasQuadrada":
+                output.value = inputValue /2.59 ;
+                break;  
+
+
+            // Polegada Quadrada
+            case "polegadaQuadrada-milimetroQuadrado":
+                output.value = inputValue *645.2 ;
+                break;
+
+            case "polegadaQuadrada-centimetroQuadrado":
+                output.value = inputValue *6.452 ;
+                break;
+
+            case "polegadaQuadrada-metroQuadrado":
+                output.value = inputValue /1550 ;
+                break;   
+
+            case "polegadaQuadrada-hectare":
+                output.value = inputValue /1.55e+7 ;
+                break;
+
+            case "polegadaQuadrada-quilometroQuadrado":
+                output.value = inputValue /1.55e+9 ;
+                break;
+
+            case "polegadaQuadrada-polegadaQuadrada":
+                output.value = inputValue 
+                break;                         
+                
+            case "polegadaQuadrada-pesQuadrado":
+                output.value = inputValue /144 ;
+                break;
+
+            case "polegadaQuadrada-jardaQuadrada":
+                output.value = inputValue /1296 ;
+                break;
+
+            
+            case "polegadaQuadrada-milhasQuadrada":
+                output.value = inputValue * 4.014e+9;
+                break;  
+
+
+            // Pés Quadrados
+            case "pesQuadrado-milimetroQuadrado":
+                output.value = inputValue *92900 ;
+                break;
+
+            case "pesQuadrado-centimetroQuadrado":
+                output.value = inputValue *929 ;
+                break;
+
+            case "pesQuadrado-metroQuadrado":
+                output.value = inputValue /10.764 ;
+                break;   
+
+            case "pesQuadrado-hectare":
+                output.value = inputValue /107600;
+                break;
+
+            case "pesQuadrado-quilometroQuadrado":
+                output.value = inputValue /1.076e+7 ;
+                break;
+
+            case "pesQuadrado-polegadaQuadrada":
+                output.value = inputValue *14 ;
+                break;                         
+                
+            case "pesQuadrado-pesQuadrado":
+                output.value = inputValue /144 ;
+                break;
+
+            case "pesQuadrado-jardaQuadrada":
+                output.value = inputValue /1296;
+                break;
+
+            
+            case "pesQuadrado-milhasQuadrada":
+                output.value = inputValue /4.014e+9 ;
+                break;  
+
+
+            // Jardas Quadradas
+            case "jardaQuadrada-milimetroQuadrado":
+                output.value = inputValue *836100 ;
+                break;
+
+            case "jardaQuadrada-centimetroQuadrado":
+                output.value = inputValue *8361 ;
+                break;
+
+            case "jardaQuadrada-metroQuadrado":
+                output.value = inputValue /1.196 ;
+                break;   
+
+            case "jardaQuadrada-hectare":
+                output.value = inputValue /11960 ;
+                break;
+
+            case "jardaQuadrada-quilometroQuadrado":
+                output.value = inputValue /1.196e+6;
+                break;
+
+            case "jardaQuadrada-polegadaQuadrada":
+                output.value = inputValue *1296 ;
+                break;                         
+                
+            case "jardaQuadrada-pesQuadrado":
+                output.value = inputValue *9 ;
+                break;
+
+            case "jardaQuadrada-jardaQuadrada":
+                output.value = inputValue 
+                break;
+
+            
+            case "jardaQuadrada-milhasQuadrada":
+                output.value = inputValue /3.098e+6 ;
+                break;  
+
+
+            // Milhas Quadradas
+            case "milhasQuadrada-milimetroQuadrado":
+                output.value = inputValue * 2.59e+12 ;
+                break;
+
+            case "milhasQuadrada-centimetroQuadrado":
+                output.value = inputValue *2.59e+10 ;
+                break;
+
+            case "milhasQuadrada-metroQuadrado":
+                output.value = inputValue *2.59e+6 ;
+                break;   
+
+            case "milhasQuadrada-hectare":
+                output.value = inputValue *259 ;
+                break;
+
+            case "milhasQuadrada-quilometroQuadrado":
+                output.value = inputValue *2.59 ;
+                break;
+
+            case "milhasQuadrada-polegadaQuadrada":
+                output.value = inputValue *4.014e+9 ;
+                break;                         
+                
+            case "milhasQuadrada-pesQuadrado":
+                output.value = inputValue *2.788e+7 ;
+                break;
+
+            case "milhasQuadrada-jardaQuadrada":
+                output.value = inputValue * 3.098e+6 ;
+                break;
+
+            
+            case "milhasQuadrada-milhasQuadrada":
+                output.value = inputValue 
+                break;  
+
+            }
+        }
+    </script>
+</body>
+</html>

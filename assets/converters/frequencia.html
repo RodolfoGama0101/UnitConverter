@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="../css/cssConverters/converterStyle.css">
+    <title>Calculator</title>
+</head>
+
+<body>
+
+    <div id="container">
+        <div id="title">
+            <h1 id="titulo">Conversor de Frequência</h1>
+        </div>
+    
+        <div id="conversor">
+            <div id="div-entrada">
+                <select name="entrada" id="selecaoEntrada" onchange="appConvert()">
+                    <option value="hertz">Hertz</option>
+                    <option value="quilohertz">Quilo-Hertz</option>
+                    <option value="megahertz">Mega-Hertz</option>
+                    <option value="gigahertz">Gigahertz</option>
+                </select>
+    
+                <input id="entrada" type="number" onkeyup="appConvert()">
+            </div>
+    
+            <span class="material-symbols-outlined" id="igual"> equal </span>
+    
+            <div id="div-saida">
+                <select name="saida" id="selecaoSaida" onchange="appConvert()">
+                    <option value="hertz">Hertz</option>
+                    <option value="quilohertz">Quilo-Hertz</option>
+                    <option value="megahertz">Mega-Hertz</option>
+                    <option value="gigahertz">Gigahertz</option>
+                </select>
+    
+                <input id="saida" type="number" onkeyup="appConvert()">
+            </div>
+        </div>
+        
+    </div>
+
+    <script>
+        var input = document.querySelector("#entrada");
+        var output = document.querySelector("#saida");
+        var selectInput = document.querySelector("#selecaoEntrada");
+        var selectOutput = document.querySelector("#selecaoSaida");
+
+
+        function appConvert() {
+        var inputValue = Number(input.value);
+        var selectInputValue = selectInput.value;
+        var selectOutputValue = selectOutput.value;
+
+            switch (selectInputValue + "-" + selectOutputValue) {
+            
+                // Hertz
+            case "hertz-hertz" :
+                output.value = inputValue 
+                break;
+
+            case "hertz-quilohertz":
+                output.value = inputValue / 1000 ;
+                break;
+
+            case "hertz-megahertz":
+                output.value = inputValue / 1e+6;
+                break;   
+
+            case "hertz-gigahertz":
+                output.value = inputValue / 1e+9;
+                break;
+                
+
+            // Quilo-Hertz
+            case "quilohertz-hertz":
+                output.value = inputValue *1000 ;
+                break;
+
+            case "quilohertz-quilohertz":
+                output.value = inputValue 
+                break;
+
+            case "quilohertz-megahertz":
+                output.value = inputValue /1000 ;
+                break;   
+
+            case "quilohertz-gigahertz":
+                output.value = inputValue /1e+6 ;
+                break;
+
+            // Mega-Hertz
+            case "megahertz-hertz":
+                output.value = inputValue *1e+6 ;
+                break;
+
+            case "megahertz-quilohertz":
+                output.value = inputValue *1000 ;
+                break;
+
+            case "megahertz-megahertz":
+                output.value = inputValue 
+                break;   
+
+            case "megahertz-gigahertz":
+                output.value = inputValue /1000 ;
+                break;
+
+
+            // Gigahertz
+            case "gigahertz-hertz":
+                output.value = inputValue *1e+9 ;
+                break;
+
+            case "gigahertz-quilohertz":
+                output.value = inputValue *1e+6 ;
+                break;
+
+            case "gigahertz-megahertz":z
+                output.value = inputValue *10000 ;
+                break;   
+
+            case "gigahertz-gigahertz":
+                output.value = inputValue 
+                break;
+
+
+            }
+        }
+    </script>
+</body>
+</html>
